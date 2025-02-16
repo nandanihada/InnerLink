@@ -4,9 +4,10 @@ import '../styles/login.css';
 function Login() {
   return (
     <>
+    <div className="container">
       <form className="form">
         <div className="title">
-          Welcome,<br />
+          Welcome<br />
           <span>sign up to continue</span>
         </div>
         <input className="input" name="email" placeholder="Email" type="email" />
@@ -33,6 +34,7 @@ function Login() {
         </div>
         <button className="button-confirm">Let’s go →</button>
       </form>
+      </div>
     </>
   );
 }
