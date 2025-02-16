@@ -32,7 +32,7 @@ function Login() {
             </svg>
           </div>
         </div>
-        <button className="button-confirm">Let’s go →</button>
+        <button className="button-confirm">LETS GO →</button>
       </form>
       </div>
     </>
