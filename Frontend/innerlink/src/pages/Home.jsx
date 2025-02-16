@@ -5,7 +5,6 @@ import Cards from "../component/Cards";
 import CancelIcon from "@mui/icons-material/Cancel";
 import SecurityIcon from "@mui/icons-material/Security";
 import ThumbUpAltIcon from "@mui/icons-material/ThumbUpAlt";
-import { Card } from "@mui/material";
 function Home() {
   return (
     <>
