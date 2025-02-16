@@ -5,7 +5,6 @@ function Navbar() {
   return (
     <>
        <div className="navbar-container" data-aos="fade-down" data-aos-delay="300">
-    
     <ul className="navbar-list" >
       <li className="nav-links">
         <Link to="/" >Home</Link>
