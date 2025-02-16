@@ -23,7 +23,7 @@ function Navbar() {
       <li className="nav-links">
         <Link to="/coming-soon">
         Lorem
-        </Link>
+        </Link>      
       </li>
     </ul>  
   </div>
