@@ -1,37 +1,49 @@
-body {
-    /* background-image: url('D:/spring/InnerLink/InnerLink/Frontend/innerlink/img/52827349811_5363368b39_o.jpg'); 
-    background-size:cover;  
-    background-repeat: no-repeat; 
-    height: 100vh; 
-    margin: 0; */
-}
+    
+    .container{
 
+      background-image: url('https://i.postimg.cc/XqNpXCPB/fantasy-scene-anime-style.jpg');
+     /* animation: zoom-in 4s ease-in-out infinite; */
+      background-size: cover;
+      background-position: center;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    
+    }
+   
+  
 .form {
-
-    background: rgba(64, 238, 12, 0.1);
-  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-  backdrop-filter: blur( 13px );
-  -webkit-backdrop-filter: blur( 13px );
-  border-radius: 10px;
-  border: 1px solid rgba(19, 224, 36, 0.18);
-    --input-focus: #2d8cf0;
+  background: rgba( 109, 152, 96, 0. );
+  backdrop-filter: blur( 2.5px );
+-webkit-backdrop-filter: blur( 2.5px );
+  box-shadow: 0 8px 32px 0 rgba(24, 96, 2, 0.591);
+  border-radius: 50px;
+  /* border: 1px solid rgba(219, 230, 220, 0.18); */
+    --input-focus: #03140a;
     --font-color: #fefefe;
-    --font-color-sub: #7e7e7e;
-    --bg-color: #d4dae1;
-    --main-color: #fefefe;
+    --font-color-sub: #c0c8c7;
+    --bg-color: #011c11;
+    --main-color: #e1f1ea;
     padding: 20px;
+  margin: auto;
+  margin-top: 30px;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
     gap: 20px;
+    height: 450px;
+    width: 400px;
     
   }
   
   .title {
     color: var(--font-color);
     font-weight: 900;
-    font-size: 20px;
+  align-items: center;
+    text-align: center;
+    font-size: 40px;
     margin-bottom: 25px;
   }
   
@@ -109,3 +121,11 @@ body {
     cursor: pointer;
   }
   
+  @keyframes zoom-in {
+    from{
+     background-size: contain;
+    }
+    to{
+     background-size: cover;
+    }
+  }

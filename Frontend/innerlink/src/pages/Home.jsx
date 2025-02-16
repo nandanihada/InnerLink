@@ -5,8 +5,11 @@ import Cards from "../component/Cards";
 import CancelIcon from "@mui/icons-material/Cancel";
 import SecurityIcon from "@mui/icons-material/Security";
 import ThumbUpAltIcon from "@mui/icons-material/ThumbUpAlt";
+<<<<<<< HEAD
 import { Card } from "@mui/material";
 import PermIdentityIcon from '@mui/icons-material/PermIdentity';
+=======
+>>>>>>> e3ee10988ef02b2c7c071fe7662322fd6a694c85
 function Home() {
   return (
     <>
