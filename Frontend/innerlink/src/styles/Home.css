@@ -1,0 +1,74 @@
+body{
+    overflow-x: hidden;
+    font-family: sans-serif;
+    /* margin: 1%; */
+    background-color: aliceblue;
+}
+.top-container{
+    display: flex;
+    /* background-image: url("https://png.pngtree.com/png-clipart/20240325/original/pngtree-birds-fly-in-the-clouds-png-image_14679532.png"); */
+    background-size: 70vh;
+    background-clip: border-box;
+    background-repeat: repeat;
+    background-position: center;   
+    min-height: 100vh;
+    flex-direction: row;
+    gap: 10%;
+    justify-content: space-between;
+    margin: 1%;
+    padding: 1%;
+
+}
+.img-top{
+    width: 90vh;
+    padding-top: 10%;
+    border-radius: 100%;
+}
+.main-heading{
+  font-size: 17vh;
+  font-family: "Rationale", sans-serif;
+  margin-top: 50%;
+  color: darkgreen;
+}
+section{
+    padding: 20px;
+    margin-top: 10%;
+}
+.sub-heading{
+    position: relative;
+    top: -10%;
+    text-align: center;
+    font-size: 7vh;
+    font-family: "Rationale", sans-serif;
+    color: olivedrab;
+    font-weight: 800;
+}
+.section-heading{
+    font-size: 6vh;
+    text-align: center;
+    font-family: "Kaushan Script", cursive;
+    color: darkgreen;
+    font-weight: 700;
+
+}
+.content-container{
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+}
+.content{
+    font-size: 30px;
+    font-family: "PT Serif", serif;
+    color: rgb(0, 0, 0);
+    font-weight: 700;
+    padding-top: 3%;
+    text-align: justify;
+    margin: 10px;
+}
+.content-img{
+    padding: 20px; 
+}
+.content-img img{
+    max-width: 60vh;
+    border-radius: 100px;   
+}

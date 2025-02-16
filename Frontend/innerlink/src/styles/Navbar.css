@@ -1,0 +1,192 @@
+.navbar-container {
+    top: 30px; /* Align to the top of the container */
+    width: fit-content; /* Ensure the navbar spans the entire width */
+    border-radius: 10px;
+    padding: 20px;
+    background: rgba(0, 255, 136, 0.212);
+    backdrop-filter: blur(3.5px);
+    -webkit-backdrop-filter: blur(10.5px);
+    border-radius: 10px;
+    margin-left: 10%;
+    position: fixed;
+    left: 8%;
+    z-index: 999;
+    transition: all 1s ease;
+  }
+  .top-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+  }
+  
+  .navbar-list {
+    display: flex;
+    justify-content: center; /* Center the links */
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 70px; /* Add space between links */
+  }
+  
+  .nav-links {
+    font-size: 25px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-family: "Urbanist", sans-serif;
+  }
+  
+  .nav-links a {
+    color: darkgreen;
+    font-weight: 600; /* Link text color */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+  }
+  
+  .nav-links a:hover {
+    color: rgb(0, 153, 255); /* Change color on hover */
+  }
+  
+  .call-icon {
+    top: 5px;
+    height: 30%;
+    position: relative;
+    color: rgb(15, 163, 77);
+  }
+  
+  .btn-app {
+    z-index: 999;
+    padding: 20px;
+    background-color: black;
+    border-radius: 100px;
+    font-size: 20px;
+    width: fit-content;
+    margin-right: 5%;
+    border: 1px solid white;
+    color: white;
+    transition: all 1s ease-in-out;
+    overflow: hidden;
+    box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.37);
+  
+  }
+  
+  .btn-app:hover {
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    transform: translateY(-10px);
+  }
+  
+  .btn-text {
+    font-family: "Urbanist", sans-serif;
+    margin: 10px;
+    font-weight: 600;
+    font-size: 25px;
+  }
+  .btn-text:hover{
+  cursor: pointer;
+  }
+  
+  .img-logo {
+    width: 8%;
+    position: relative;
+    left: 30px;
+  }
+  
+  /* Responsive Styles */
+  @media screen and (max-width: 1024px) {
+    .navbar-container {
+      left: 5%;
+      margin-left: 5%;
+      width: 90%;
+    }
+  
+    .navbar-list {
+      gap: 40px;
+    }
+  
+    .nav-links {
+      font-size: 20px;
+    }
+  
+    .btn-app {
+      font-size: 18px;
+      padding: 15px;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .navbar-container {
+      position: relative;
+      flex-direction: column;
+      align-items: center;
+      background-color: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(10px);
+      padding: 10px;
+      left: 0;
+      margin-left: 0;
+      width: 100%;
+      top: 0;
+      border-radius: 0;
+    }
+  
+    .top-div {
+      flex-direction: column;
+      gap: 20px;
+    }
+  
+    .navbar-list {
+      flex-direction: column;
+      gap: 20px;
+      width: 100%;
+      text-align: center;
+    }
+  
+    .nav-links {
+      font-size: 18px;
+      padding-top: 10px;
+    }
+  
+    .btn-app {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 16px;
+    }
+    .btn-text{
+      font-size: 15px;
+    }
+  
+    .img-logo {
+      left: 0;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .navbar-container {
+      padding: 5px;
+    }
+  
+    .navbar-list {
+      gap: 15px;
+    }
+  
+    .nav-links {
+      font-size: 16px;
+    }
+  
+    .btn-app {
+      font-size: 14px;
+      padding: 10px;
+    }
+    .img-logo{
+      display: none;
+    }
+  
+    .call-icon{
+      display: none;
+    }
+  }
