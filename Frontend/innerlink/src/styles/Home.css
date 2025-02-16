@@ -94,12 +94,17 @@ section{
     display: flex;
     flex-direction: column;
 }
+.logo{
+    padding: 20px;
+    width: 15vh;
+    height: 13vh;   
+}
 .heading-container{
     display: flex;
     gap: 30px;
     width: 100vh;
     height: fit-content;
-    margin-top: 30%;
+    margin-top: 25%;
     font-family: "Luckiest Guy", serif;
 }
 .first-heading{
@@ -118,4 +123,20 @@ section{
 }
 .second-heading:hover{
     transform: translateY(-10px);
+}
+.btn-get-started{
+    font-size: 3vh;
+    padding: 20px;
+    background-color: transparent;
+    font-family: "Belanosima", serif;
+    border-radius: 30px;
+    position: relative;
+    top: -15%;
+    text-align: center;
+    left: 30%;
+    color: black;
+}
+
+.card1{
+    transform: rotate(-5deg);
 }

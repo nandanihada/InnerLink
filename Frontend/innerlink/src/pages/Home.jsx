@@ -5,14 +5,23 @@ import Cards from "../component/Cards";
 import CancelIcon from "@mui/icons-material/Cancel";
 import SecurityIcon from "@mui/icons-material/Security";
 import ThumbUpAltIcon from "@mui/icons-material/ThumbUpAlt";
+import { delay, easeIn, easeInOut, motion, useScroll } from "motion/react";
 import { Card } from "@mui/material";
-import PermIdentityIcon from '@mui/icons-material/PermIdentity';
+import PermIdentityIcon from "@mui/icons-material/PermIdentity";
 function Home() {
+  const { scrollYProgress } = useScroll();
   return (
     <>
       <Navbar />
-      <div className="top-container">
-        <div className="heading-top">
+      <motion.div className="top-container">
+        <motion.div
+          className="heading-top"
+          whileInView={{
+            x: [100, 0],
+            opacity: [0, 1],
+            transition: { duration: 0.5, delay: 0.5 },
+          }}
+        >
           <div className="heading-container">
             <h1 className="first-heading">INNER</h1>
             <h1 className="second-heading">LINK</h1>
@@ -20,21 +29,52 @@ function Home() {
           <h6 className="sub-heading">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, eum.
           </h6>
-        </div>
+          <motion.button
+            className="btn-get-started"
+            whileTap={{ scale: 0.9 }}
+            whileHover={{
+              scale: 1.1,
+              backgroundColor: "green",
+              transition: { duration: 0.5},
+              color: "white",
+              border: "2px solid white",
+              transition:"all 1s ease"
+            }}
+          >
+            Get Started
+          </motion.button>
+        </motion.div>
         <div className="image-top">
-          <img
+          <motion.img
+            whileInView={{
+              x: [-100, 0],
+              opacity: [0, 1],
+              transition: { delay: 1, duration: 0.5 },
+            }}
             src="https://png.pngtree.com/png-clipart/20240516/original/pngtree-illustration-of-camping-in-the-wild-forest-png-image_15107429.png"
             alt=""
             className="img-top"
           />
         </div>
-      </div>
+      </motion.div>
       <section className="section-one">
         <div className="first-section">
-          <h1 className="section-heading">Try Something New !</h1>
+          <motion.h1
+            whileInView={{ x: [100, 0], opacity: [0, 1], delay: 1 }}
+            className="section-heading"
+          >
+            Try Something New !
+          </motion.h1>
         </div>
         <div className="content-container">
-          <div className="content">
+          <motion.div
+            className="content"
+            whileInView={{
+              x: [-100, 0],
+              opacity: [0, 0.5, 1],
+              transition: { delay: 0.5 },
+            }}
+          >
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae
             voluptatum quod ullam culpa sit fugiat ea facere quibusdam impedit
             inventore eius doloremque veritatis, fuga quae animi, dolorem
@@ -43,20 +83,37 @@ function Home() {
             accusantium quibusdam necessitatibus pariatur fuga, accusamus
             eligendi nemo repellat deleniti molestias reprehenderit? Eum, et
             facilis?
-          </div>
+          </motion.div>
           <div className="content-img">
-            <img
+            <motion.img
               src="https://cdn.dribbble.com/users/2218682/screenshots/6132827/2.gif"
               alt=""
+              whileInView={{
+                x: [100, 0],
+                opacity: [0, 1],
+                transition: { delay: 0.5 },
+              }}
             />
           </div>
         </div>
       </section>
 
       <section className="section-two">
-        <h1 className="section-heading">Minimalism in Action</h1>
+        <motion.h1
+          whileInView={{ x: [100, 0], opacity: [0, 1], delay: 1 }}
+          className="section-heading"
+        >
+          Minimalism in Action
+        </motion.h1>
 
-        <div className="cards-container">
+        <motion.div
+          className="cards-container"
+          whileInView={{
+            transition: { delay: 0.5 },
+            opacity: [0, 1],
+            delay: 1,
+          }}
+        >
           <Cards
             icon={
               <SecurityIcon
@@ -69,6 +126,8 @@ function Home() {
                   top: "20px",
                   padding: "10px",
                 }}
+                className="card3"
+                
               />
             }
             content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, eum."
@@ -105,18 +164,18 @@ function Home() {
             }
             content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, eum."
           />
-        </div>
+        </motion.div>
       </section>
 
       <section className="section-three">
-        <h1 className="section-heading">Our Users</h1>
-        <marquee className="tes-container">
-          
-        </marquee>
+        <motion.h1
+          whileInView={{ x: [100, 0], opacity: [0, 1], delay: 1 }}
+          className="section-heading"
+        >
+          Our Users
+        </motion.h1>
       </section>
-      <footer>
-            
-      </footer>
+      <footer></footer>
     </>
   );
 }
