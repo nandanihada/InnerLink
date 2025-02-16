@@ -6,6 +6,7 @@ body{
 }
 .top-container{
     display: flex;
+    width: 100vh;
     /* background-image: url("https://png.pngtree.com/png-clipart/20240325/original/pngtree-birds-fly-in-the-clouds-png-image_14679532.png"); */
     background-size: 70vh;
     background-clip: border-box;
@@ -13,20 +14,32 @@ body{
     background-position: center;   
     min-height: 100vh;
     flex-direction: row;
-    gap: 10%;
+    gap: 5%;
     justify-content: space-between;
     margin: 1%;
     padding: 1%;
 
 }
+.cards-container{
+    /* background-image: url("https://img.freepik.com/free-vector/hand-painted-watercolor-tropical-leaves-summer-background_23-2148936206.jpg"); */
+    background-position: center;   
+    /* min-height: 100vh; */
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 1%;
+    padding: 1%;
+    display: flex;
+    flex-direction: row;
+    gap: 5%;
+}
 .img-top{
-    width: 90vh;
+    width: 80vh;
     padding-top: 10%;
     border-radius: 100%;
 }
 .main-heading{
   font-size: 17vh;
-  font-family: "Rationale", sans-serif;
+  font-family: "Sulphur Point", serif;
   margin-top: 50%;
   color: darkgreen;
 }
@@ -36,19 +49,21 @@ section{
 }
 .sub-heading{
     position: relative;
-    top: -10%;
+    top: -15%;
+    width: 80vh;
+    /* left: 25%; */
     text-align: center;
-    font-size: 7vh;
-    font-family: "Rationale", sans-serif;
+    font-size: 4vh;
+    font-family: "Belanosima", serif; 
     color: olivedrab;
-    font-weight: 800;
+    font-weight: 500;
 }
 .section-heading{
-    font-size: 6vh;
+    font-size: 8vh;
     text-align: center;
-    font-family: "Kaushan Script", cursive;
+    font-family: "Belanosima", serif;    
     color: darkgreen;
-    font-weight: 700;
+    font-weight: 600;
 
 }
 .content-container{
@@ -57,11 +72,13 @@ section{
     gap: 40px;
 }
 .content{
-    font-size: 30px;
-    font-family: "PT Serif", serif;
+    font-size: 3.5vh;
+    font-family: "Sulphur Point", serif;
     color: rgb(0, 0, 0);
     font-weight: 700;
-    padding-top: 3%;
+    padding-top: 5%;
+    width: 100vh;
+    letter-spacing: 2px;
     text-align: justify;
     margin: 10px;
 }
@@ -69,6 +86,32 @@ section{
     padding: 20px; 
 }
 .content-img img{
-    max-width: 60vh;
+    min-width: 40vh;
+    min-height: 40vh;
     border-radius: 100px;   
+}
+.heading-container{
+    display: flex;
+    gap: 30px;
+    width: 100vh;
+    height: fit-content;
+    margin-top: 30%;
+    font-family: "Luckiest Guy", serif;
+}
+.first-heading{
+    color: green;
+    transition: all 1s ease;
+    font-size: 15vh;
+}
+.first-heading:hover{
+    transform: translateY(-10px);
+}
+.second-heading{
+    color: rgb(0, 85, 0);
+    transition: all 1s ease;
+    font-size: 15vh;
+    letter-spacing: 15px;
+}
+.second-heading:hover{
+    transform: translateY(-10px);
 }

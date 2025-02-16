@@ -1,0 +1,32 @@
+.card{
+    /* border: 10px dotted rgb(0, 61, 20); */
+    width: 50vh;
+    height: 70vh;
+    border-radius: 30px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+        gap: 20%;
+    background: rgba(64, 238, 12, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    backdrop-filter: blur( 16px );
+    -webkit-backdrop-filter: blur( 13px );
+    border-radius: 30px;
+    background-image: url("https://img.freepik.com/free-vector/hand-painted-watercolor-tropical-leaves-summer-background_23-2148936206.jpg");
+    background-size: cover;
+    background-clip: border-box;
+    background-repeat: no-repeat;
+}
+.card-items{
+    padding-top: 20%;
+}
+.card-content{
+    padding: 20px;
+    font-size: 30px;
+    font-family: "Sulphur Point", serif;
+        color: rgb(0, 0, 0);
+    font-weight: 700;
+    padding-top: 3%;
+    text-align: justify;
+    margin: 10px;
+}
