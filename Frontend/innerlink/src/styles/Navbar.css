@@ -9,7 +9,7 @@
     border-radius: 10px;
     margin-left: 10%;
     position: fixed;
-    left: 8%;
+    left: 20%;
     z-index: 999;
     transition: all 1s ease;
   }
@@ -47,7 +47,7 @@
   }
   
   .nav-links a:hover {
-    color: rgb(0, 153, 255); /* Change color on hover */
+    color: rgb(16, 58, 0); /* Change color on hover */
   }
   
   .call-icon {
@@ -57,39 +57,7 @@
     color: rgb(15, 163, 77);
   }
   
-  .btn-app {
-    z-index: 999;
-    padding: 20px;
-    background-color: black;
-    border-radius: 100px;
-    font-size: 20px;
-    width: fit-content;
-    margin-right: 5%;
-    border: 1px solid white;
-    color: white;
-    transition: all 1s ease-in-out;
-    overflow: hidden;
-    box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.37);
-  
-  }
-  
-  .btn-app:hover {
-    background-color: white;
-    color: black;
-    cursor: pointer;
-    transform: translateY(-10px);
-  }
-  
-  .btn-text {
-    font-family: "Urbanist", sans-serif;
-    margin: 10px;
-    font-weight: 600;
-    font-size: 25px;
-  }
-  .btn-text:hover{
-  cursor: pointer;
-  }
-  
+
   .img-logo {
     width: 8%;
     position: relative;

@@ -8,21 +8,21 @@ function Navbar() {
     
     <ul className="navbar-list" >
       <li className="nav-links">
-        <Link to="/" >Lorem</Link>
+        <Link to="/" >Home</Link>
       </li>
       <li className="nav-links">
         <Link to="#">
-        Lorem
+        About US
         </Link>
       </li>
       <li className="nav-links">
         <Link to="#">
-        Lorem
+        Services
         </Link>
       </li>
       <li className="nav-links">
         <Link to="/coming-soon">
-        Lorem
+        Partners
         </Link>
       </li>
     </ul>  
