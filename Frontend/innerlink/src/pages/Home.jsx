@@ -5,6 +5,8 @@ import Cards from "../component/Cards";
 import CancelIcon from "@mui/icons-material/Cancel";
 import SecurityIcon from "@mui/icons-material/Security";
 import ThumbUpAltIcon from "@mui/icons-material/ThumbUpAlt";
+import { Card } from "@mui/material";
+import PermIdentityIcon from '@mui/icons-material/PermIdentity';
 function Home() {
   return (
     <>
@@ -108,7 +110,13 @@ function Home() {
 
       <section className="section-three">
         <h1 className="section-heading">Our Users</h1>
+        <marquee className="tes-container">
+          
+        </marquee>
       </section>
+      <footer>
+            
+      </footer>
     </>
   );
 }
