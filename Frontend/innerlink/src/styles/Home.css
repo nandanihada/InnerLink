@@ -94,12 +94,17 @@ section{
     display: flex;
     flex-direction: column;
 }
+.logo{
+    padding: 20px;
+    width: 15vh;
+    height: 13vh;   
+}
 .heading-container{
     display: flex;
     gap: 30px;
     width: 100vh;
     height: fit-content;
-    margin-top: 30%;
+    margin-top: 25%;
     font-family: "Luckiest Guy", serif;
 }
 .first-heading{
@@ -118,4 +123,37 @@ section{
 }
 .second-heading:hover{
     transform: translateY(-10px);
+}
+.btn-get-started{
+    font-size: 3vh;
+    padding: 20px;
+    background-color: transparent;
+    font-family: "Belanosima", serif;
+    border-radius: 30px;
+    position: relative;
+    top: -15%;
+    text-align: center;
+    left: 30%;
+    color: black;
+}
+
+.card1{
+    transform: rotate(-5deg);
+}
+.dev-container{
+    background-image: url("https://media3.giphy.com/media/eNMwgBhXLwdY1WRYCW/giphy.gif?cid=6c09b952prd2hf8m4gefvi12zv2mzljt1a7td474rsqkw2m5&ep=v1_stickers_search&rid=giphy.gif&ct=s");
+   min-height: 60vh;
+    flex-direction: column;
+    justify-content: space-between;
+    display: flex;
+    gap: 1%;
+    padding: 20px;
+    margin: 1%;
+}
+footer{
+    height: fit-content;
+    background-color: rgb(226, 241, 219);
+    padding: 20px;
+    margin-top: 10%;
+    border-radius: 40px;
 }

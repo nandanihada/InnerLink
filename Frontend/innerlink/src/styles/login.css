@@ -22,7 +22,7 @@
   --font-color-sub: #c0c8c7;
   --bg-color: #011c11;
   --main-color: #e1f1ea;
-  padding: 20px;
+  padding: 10vh;
   margin: auto;
   margin-top: 5%;
   display: flex;
@@ -30,8 +30,8 @@
   align-items: center;
   justify-content: center;
   gap: 20px;
-  height: 80vh;
-  width: 80vh;
+  width: fit-content;
+  height: fit-content;
 }
 
 .title {

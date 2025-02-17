@@ -2,9 +2,10 @@ import React from 'react'
 import CancelIcon from '@mui/icons-material/Cancel';
 import "../styles/Cards.css"
 function Cards(props) {
+  let randomRotation=(Math.random() * 10 - 8);
   return (
     <>
-        <div className="card">
+        <div className="card" style={{transform:`rotate(${randomRotation}deg)`}}>
             <div className='card-items'></div>
         <div className="icon">
             {/* <CancelIcon sx={{color:"green",fontSize:"10vh",cursor:"pointer",position:"relative",left:"19vh",padding:"10px"}}/> */}
