@@ -67,7 +67,7 @@ section {
 .content-container {
   display: flex;
   flex-direction: row;
-  gap: 40px;
+  gap: 10%;
 }
 .content {
   font-size: 3.5vh;
@@ -84,9 +84,11 @@ section {
   padding: 20px;
 }
 .content-img img {
-  min-width: 40vh;
-  min-height: 40vh;
+  width: 70vh;
+  height: 50vh;
   border-radius: 100px;
+  position: relative;
+  top: 10%;
 }
 .tes-container {
   display: flex;
