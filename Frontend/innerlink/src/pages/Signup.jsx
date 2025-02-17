@@ -74,7 +74,7 @@ function Signup() {
             </div>
           </div>
           <button className="button-confirm1">LETS GO →</button>
-          <span className="new-here1">Signup</span>
+          <span className="new-here1">Already A User ? Login</span>
         </form>
       </div>
     </>
