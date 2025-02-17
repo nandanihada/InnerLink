@@ -31,7 +31,7 @@ function Footer() {
                   transition: { duration: 1, delay: 1.5 },
                 }}
               >
-                About US
+               Data Privacy
               </motion.l1>
               <motion.l1
                 whileInView={{
@@ -40,7 +40,7 @@ function Footer() {
                   transition: { duration: 1, delay: 2 },
                 }}
               >
-                Developers
+                Terms and Condition
               </motion.l1>
             </ul>
             <motion.p
@@ -55,7 +55,7 @@ function Footer() {
                 transition: { duration: 1, delay: 3 },
               }}
             >
-              Copyright &copy; 2022 InnerLink
+              Copyright &copy; 2025 InnerLink
             </motion.p>
           </div>
         </div>

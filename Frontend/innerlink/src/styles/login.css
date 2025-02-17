@@ -1,9 +1,8 @@
 .inner-container {
   background-image: url("https://i.postimg.cc/XqNpXCPB/fantasy-scene-anime-style.jpg");
-  /* animation: zoom-in 4s ease-in-out infinite; */
   background-size: cover;
   background-position: center;
-  min-height: 100vh;
+  min-height: 120vh;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -120,13 +119,4 @@
 .new-here{
   color: var(--font-color);
   font-size: 3vh;
-}
-
-@keyframes zoom-in {
-  from {
-    background-size: contain;
-  }
-  to {
-    background-size: cover;
-  }
 }

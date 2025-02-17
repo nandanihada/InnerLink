@@ -82,7 +82,7 @@ function Home() {
             whileInView={{
               x: [-100, 0],
               opacity: [0, 0.5, 1],
-              transition: { delay: 0.5 },
+              transition: { delay: 1 },
             }}
           >
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae
@@ -96,7 +96,7 @@ function Home() {
           </motion.div>
           <div className="content-img">
             <motion.img
-              src="https://cdn.dribbble.com/users/2218682/screenshots/6132827/2.gif"
+              src="https://cdn.dribbble.com/userupload/21292774/file/original-14d7feebe36c9c9e5ef5f720b9d31791.gif"
               alt=""
               whileInView={{
                 x: [100, 0],
