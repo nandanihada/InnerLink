@@ -1,0 +1,89 @@
+.layout {
+  width: auto;
+  margin-top: 1%;
+  display: grid;
+  grid:
+    "sidebar body" 1fr
+    / 20% 1fr;
+  gap: 10px;
+  height: auto;
+}
+.full-container {
+  z-index: -1;
+  background-image: url("https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Zm9yZXN0JTIwYmFja2dyb3VuZHxlbnwwfHwwfHx8MA%3D%3D");
+  background-size: cover;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  height: auto;
+  border: 1px solid black;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.45);
+  box-shadow: 0 8px 32px 0 rgba(255, 115, 0, 0.57);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  width: auto;
+}
+.body {
+  grid-area: body;
+  height: auto;
+  width: auto;
+  border: 1px solid black;
+  background: rgba(255, 255, 255, 0.45);
+  box-shadow: 0 8px 32px 0 rgba(255, 102, 0, 0.37);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+.item-container h2 {
+  position: relative;
+  left: 20%;
+  font-size: 3vh;
+  font-family: "Belanosima", serif;
+  font-weight: 600;
+}
+.item-main-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+.item-container {
+  padding-top: 10px;
+}
+.feed-heading {
+  font-size: 7vh;
+  text-align: center;
+  font-family: "Luckiest Guy", serif;
+  color: darkgreen;
+  font-weight: 600;
+  letter-spacing: 10px;
+}
+.feed-heading-container {
+  height: 20vh;
+  background: rgba(255, 255, 255, 0.45);
+  box-shadow: 0 8px 32px 0 rgba(255, 166, 0, 0.37);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 30px;
+  width: 150vh;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.coming-soon {
+  text-align: center;
+  font-size: 11vh;
+  font-family: "Belanosima", serif;
+  color: darkgreen;
+  font-weight: 600;
+  position: relative;
+  top: 30vh;
+}
