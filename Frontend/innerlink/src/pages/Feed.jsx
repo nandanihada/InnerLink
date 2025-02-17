@@ -5,7 +5,9 @@ import FaceIcon from "@mui/icons-material/Face";
 import NewspaperIcon from "@mui/icons-material/Newspaper";
 import LogoutIcon from "@mui/icons-material/Logout";
 import DynamicFeedIcon from "@mui/icons-material/DynamicFeed";
-import Cards from "../component/Cards";
+import Cards from "../component/Cards"; 
+import Post from "../component/Post";
+
 function Feed() {
   return (
     <>
@@ -93,7 +95,12 @@ function Feed() {
             </div>
           </div>
           <div class="body">
-            <h1 className="coming-soon">Coming Soon!</h1>
+            
+            <div className="post-container">
+              <Post />
+              <br></br>
+              <Post />
+            </div>
           </div>
         </section>
       </div>
