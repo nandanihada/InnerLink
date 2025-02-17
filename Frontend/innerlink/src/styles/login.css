@@ -1,14 +1,15 @@
-.container {
+.inner-container {
   background-image: url("https://i.postimg.cc/XqNpXCPB/fantasy-scene-anime-style.jpg");
   /* animation: zoom-in 4s ease-in-out infinite; */
   background-size: cover;
   background-position: center;
   min-height: 100vh;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-}
 
+}
 .form {
   font-family: "Belanosima", serif;
   background: rgba(109, 152, 96, 0);
@@ -58,6 +59,7 @@
   font-size: 15px;
   font-weight: 600;
   color: var(--font-color);
+  transition: all 1s ease;
   padding: 20px;
   outline: none;
 }
@@ -114,6 +116,10 @@
   font-weight: 600;
   color: var(--font-color);
   cursor: pointer;
+}
+.new-here{
+  color: var(--font-color);
+  font-size: 3vh;
 }
 
 @keyframes zoom-in {

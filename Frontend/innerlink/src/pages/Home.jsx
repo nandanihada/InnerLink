@@ -8,8 +8,10 @@ import ThumbUpAltIcon from "@mui/icons-material/ThumbUpAlt";
 import DevCards from "../component/DevCards";
 import Footer from "../component/Footer";
 import { delay, easeIn, easeInOut, motion, useScroll } from "motion/react";
+import { useNavigate } from "react-router-dom";
 function Home() {
   const { scrollYProgress } = useScroll();
+  const navigate = useNavigate();
   return (
     <>
       <Navbar />
@@ -40,6 +42,9 @@ function Home() {
               border: "2px solid white",
               cursor: "pointer",
               transition: { duration: 0.5 },
+            }}
+            onClick={() => {
+              navigate("/login");
             }}
           >
             Get Started
@@ -142,7 +147,7 @@ function Home() {
           />
           <Cards
             icon={
-              <ThumbUpAltIcon
+              <CancelIcon
                 sx={{
                   color: "green",
                   fontSize: "10vh",
@@ -158,7 +163,7 @@ function Home() {
           />
           <Cards
             icon={
-              <CancelIcon
+              <ThumbUpAltIcon
                 sx={{
                   color: "green",
                   fontSize: "10vh",
@@ -186,18 +191,37 @@ function Home() {
         >
           Our Developers
         </motion.h1>
-        <div className="dev-container">
-          <DevCards
-            img="https://cdn1.iconfinder.com/data/icons/user-pictures/100/male3-512.png"
-            devName="Rishabh Gupta"
-            devDesc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, eum."
-          />
-          <DevCards
-            img="https://cdn3.iconfinder.com/data/icons/business-avatar-1/512/11_avatar-512.png"
-            devName="Nandani Hada"
-            devDesc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, eum."
-          />
-        </div>
+        <motion.div
+          className="dev-container"
+          whileInView={{ transition: { delay: 0.5 }, y: [0, 1] }}
+        >
+          <motion.div
+            whileInView={{
+              transition: { delay: 0.5, duration: 0.5 },
+              x: [200, 0],
+              opacity: [0, 1],
+            }}
+          >
+            <DevCards
+              img="https://cdn3.iconfinder.com/data/icons/business-avatar-1/512/11_avatar-512.png"
+              devName="Nandani Hada"
+              devDesc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, eum."
+            />
+          </motion.div>
+          <motion.div
+            whileInView={{
+              transition: { delay: 1, duration: 0.5 },
+              x: [-200, 0],
+              opacity: [0, 1],
+            }}
+          >
+            <DevCards
+              img="https://cdn1.iconfinder.com/data/icons/user-pictures/100/male3-512.png"
+              devName="Rishabh Gupta"
+              devDesc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, eum."
+            />
+          </motion.div>
+        </motion.div>
       </section>
       <footer>
         <Footer />
