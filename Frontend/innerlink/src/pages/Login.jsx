@@ -3,11 +3,39 @@ import "../styles/login.css";
 import Navbar from "../component/Navbar";
 import { delay, easeIn, easeInOut, motion, useScroll } from "motion/react";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Footer from "../component/Footer";
 
 function Login() {
   const navigate = useNavigate();
+  const [username, setUsername] = React.useState("");
+  const [password,setPassword]=React.useState("");
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try{
+      const response = await fetch("http://localhost:8080/get/user", {
+        method: "POST",
+        headers:{
+          Authorization:"Basic "+btoa(username+":"+password),
+          "Content-Type": "application/json",
+        },
+      })
+      if(response.status===200){
+        const data=await response.json();
+        console.log(data);
+        localStorage.setItem("username",data.username);
+        localStorage.setItem("email",data.email);
+        navigate("/feed");
+      }
+      else{
+        alert("Something went wrong");
+      }
+    }
+    catch(err){
+      console.log(err);
+    }
+  }
+
   return (
     <>
       <div className="inner-container">
@@ -25,23 +53,25 @@ function Login() {
             navigate("/");
           }}
         />
-        <form className="form">
+        <form className="form" onSubmit={handleSubmit}>
           <div className="title">
             Login
             <br />
-            <span>Be a part of our community</span>
+            <span>Explore the Forest !</span>
           </div>
           <input
             className="input"
-            name="email"
-            placeholder="Email"
-            type="email"
+            name="username"
+            placeholder="Enter the Username"
+            type="username"
+            onChange={(e) => setUsername(e.target.value)}
           />
           <input
             className="input"
             name="password"
             placeholder="Password"
             type="password"
+            onChange={(e) => setPassword(e.target.value)}
           />
 
           <div className="login-with">
@@ -69,12 +99,23 @@ function Login() {
             </div>
           </div>
           <button className="button-confirm">LETS GO →</button>
-          <span className="new-here">New Here? Sign Up</span>
+          <span className="new-here">
+            New Here?{" "}
+            <Link
+              to={"/signup"}
+              style={{
+                color: "white",
+                textDecoration: "underline",
+                textUnderlineOffset: "10%",
+              }}
+            >
+              Sign Up
+            </Link>
+          </span>
         </form>
       </div>
-   
-        <Footer/>
-      
+
+      <Footer />
     </>
   );
 }

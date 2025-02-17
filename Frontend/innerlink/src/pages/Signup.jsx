@@ -1,49 +1,52 @@
 import React from "react";
 import axios from "axios";
 import "../styles/signup.css";
-import Navbar from "../component/Navbar";
 import { delay, easeIn, easeInOut, motion, useScroll } from "motion/react";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
-import { useNavigate } from "react-router-dom";
-import { Alert } from "@mui/material";
+import { Link, useNavigate } from "react-router-dom";
 
 function Signup() {
-    const[formData,setFormData]=React.useState({
-        username :"",
-        password :"",
-        email:"",
-    })
-
-    const handleChange = (e) => {
-        setFormData({
-          ...formData,
-          [e.target.name]: e.target.value,
-        });
-      };
-
-    const handleSubmit=async(e)=>{
-        e.preventDefault();
-        try{
-            const response=await axios.post(
-                "http://localhost:8080/get/user",{
-                    username:formData.username,
-                    password:formData.password,
-                    email:formData.email,
-                })
-                console.log(response)
-                if(response.status===200){
-                    alert("User Added")
-                    navigate("/feed")
-                }
-                else{
-                    alert("Something went Wrong")
-                }
-        }
-        catch(err){
-            console.log(err)
-        }
-    }
   const navigate = useNavigate();
+  const [formData, setFormData] = React.useState({
+    email: "",
+    username: "",
+    password: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post("http://localhost:8080/get/user", {
+        username: formData.username,
+        password: formData.password,
+        email: formData.email,
+      });
+
+      console.log(response);
+
+      // Check if status is in the range of 2xx
+      if (response.status >= 200 && response.status < 300) {
+        localStorage.setItem("username", formData.username);
+        localStorage.setItem("email", formData.email);
+        alert("User Added");
+        navigate("/feed");
+      } else {
+        console.log("Unexpected response:", response);
+        alert("Something went Wrong");
+      }
+    } catch (err) {
+      console.error("Request failed:", err);
+      alert("Something went Wrong");
+    }
+  };
+
   return (
     <>
       <div className="inner-container1">
@@ -63,7 +66,7 @@ function Signup() {
         />
         <form className="form1" onSubmit={handleSubmit}>
           <div className="title1">
-            Signup
+            SIGN UP
             <br />
             <span>Be a part of our community</span>
           </div>
@@ -114,7 +117,19 @@ function Signup() {
             </div>
           </div>
           <button className="button-confirm1">LETS GO →</button>
-          <span className="new-here1">Already A User ? Login</span>
+          <span className="new-here1">
+            Already A User ?{" "}
+            <Link
+              to="/login"
+              style={{
+                color: "white",
+                textDecoration: "underline",
+                textUnderlineOffset: "10%",
+              }}
+            >
+              Login
+            </Link>
+          </span>
         </form>
       </div>
     </>
