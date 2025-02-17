@@ -1,0 +1,133 @@
+.inner-container1 {
+    background-image: url("https://i.postimg.cc/Qt9T1bzd/magical-nighttime-landscape-with-sparkly-lights.jpg");
+    /* animation: zoom-in 4s ease-in-out infinite; */
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+  }
+  .form1 {
+    font-family: "Belanosima", serif;
+    background: rgba(109, 152, 96, 0);
+    backdrop-filter: blur(5.5px);
+    -webkit-backdrop-filter: blur(5.5px);
+    box-shadow: 0 8px 32px 0 rgba(24, 96, 2, 0.591);
+    border-radius: 50px;
+    /* border: 1px solid rgba(219, 230, 220, 0.18); */
+    --input-focus: #03140a;
+    --font-color: #fefefe;
+    --font-color-sub: #c0c8c7;
+    --bg-color: #011c11;
+    --main-color: #e1f1ea;
+    padding: 10vh;
+    margin: auto;
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: fit-content;
+    height: fit-content;
+  }
+  
+  .title1 {
+    color: var(--font-color);
+    font-weight: 900;
+    align-items: center;
+    text-align: center;
+    font-size: 10vh;
+    margin-bottom: 25px;
+  }
+  
+  .title1 span {
+    color: var(--font-color-sub);
+    font-weight: 600;
+    font-size: 4vh;
+  }
+  
+  .input1 {
+    width: 50%;
+    border-radius: 5px;
+    border: 2px solid var(--main-color);
+    background-color: var(--bg-color);
+    box-shadow: 4px 4px var(--main-color);
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--font-color);
+    transition: all 1s ease;
+    padding: 20px;
+    outline: none;
+  }
+  
+  .input1::placeholder {
+    color: var(--font-color-sub);
+    opacity: 0.8;
+  }
+  
+  .input1:focus {
+    border: 2px solid var(--input-focus);
+  }
+  
+  .login-with1 {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .button-log1 {
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    border: 2px solid var(--main-color);
+    background-color: var(--bg-color);
+    box-shadow: 4px 4px var(--main-color);
+    color: var(--font-color);
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .icon1 {
+    width: 24px;
+    height: 24px;
+    fill: var(--main-color);
+  }
+  
+  .button-log1:active,
+  .button-confirm1:active {
+    box-shadow: 0px 0px var(--main-color);
+    transform: translate(3px, 3px);
+  }
+  
+  .button-confirm1 {
+    margin: 50px auto 0 auto;
+   padding: 20px;
+    border-radius: 5px;
+    border: 2px solid var(--main-color);
+    background-color: var(--bg-color);
+    box-shadow: 4px 4px var(--main-color);
+    font-size: 2vh;
+    font-weight: 600;
+    color: var(--font-color);
+    cursor: pointer;
+  }
+  .new-here1{
+    color: var(--font-color);
+    font-size: 3vh;
+  }
+  
+  @keyframes zoom-in {
+    from {
+      background-size: contain;
+    }
+    to {
+      background-size: cover;
+    }
+  }
+  
