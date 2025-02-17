@@ -1,159 +1,163 @@
-body{
-    overflow-x: hidden;
-    font-family: sans-serif;
-    /* margin: 1%; */
-    background-color: rgb(233, 240, 230);
+body {
+  overflow-x: hidden;
+  font-family: sans-serif;
+  /* margin: 1%; */
+  background-color: rgb(233, 240, 230);
 }
-.top-container{
-    display: flex;
-    width: 100vh;
-    /* background-image: url("https://png.pngtree.com/png-clipart/20240325/original/pngtree-birds-fly-in-the-clouds-png-image_14679532.png"); */
-    background-size: 70vh;
-    background-clip: border-box;
-    background-repeat: repeat;
-    background-position: center;   
-    min-height: 100vh;
-    flex-direction: row;
-    gap: 5%;
-    justify-content: space-between;
-    margin: 1%;
-    padding: 1%;
-
+.top-container {
+  display: flex;
+  width: 100vh;
+  /* background-image: url("https://png.pngtree.com/png-clipart/20240325/original/pngtree-birds-fly-in-the-clouds-png-image_14679532.png"); */
+  background-size: 70vh;
+  background-clip: border-box;
+  background-repeat: repeat;
+  background-position: center;
+  min-height: 100vh;
+  flex-direction: row;
+  gap: 5%;
+  justify-content: space-between;
+  margin: 1%;
+  padding: 1%;
 }
-.cards-container{
-    /* background-image: url("https://img.freepik.com/free-vector/hand-painted-watercolor-tropical-leaves-summer-background_23-2148936206.jpg"); */
-    background-position: center;   
-    /* min-height: 100vh; */
-    flex-direction: row;
-    justify-content: space-between;
-    margin: 1%;
-    padding: 1%;
-    display: flex;
-    flex-direction: row;
-    gap: 5%;
+.cards-container {
+  /* background-image: url("https://img.freepik.com/free-vector/hand-painted-watercolor-tropical-leaves-summer-background_23-2148936206.jpg"); */
+  background-position: center;
+  /* min-height: 100vh; */
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 1%;
+  padding: 1%;
+  display: flex;
+  flex-direction: row;
+  gap: 5%;
 }
-.img-top{
-    width: 80vh;
-    padding-top: 10%;
-    border-radius: 100%;
+.img-top {
+  width: 80vh;
+  padding-top: 10%;
+  border-radius: 100%;
 }
-.main-heading{
+.main-heading {
   font-size: 17vh;
   font-family: "Sulphur Point", serif;
   margin-top: 50%;
   color: darkgreen;
 }
-section{
-    padding: 20px;
-    margin-top: 10%;
+section {
+  padding: 20px;
+  margin-top: 10%;
 }
-.sub-heading{
-    position: relative;
-    top: -15%;
-    width: 80vh;
-    /* left: 25%; */
-    text-align: center;
-    font-size: 4vh;
-    font-family: "Belanosima", serif; 
-    color: olivedrab;
-    font-weight: 500;
+.sub-heading {
+  position: relative;
+  top: -15%;
+  width: 80vh;
+  /* left: 25%; */
+  text-align: center;
+  font-size: 4vh;
+  font-family: "Belanosima", serif;
+  color: olivedrab;
+  font-weight: 500;
 }
-.section-heading{
-    font-size: 8vh;
-    text-align: center;
-    font-family: "Belanosima", serif;    
-    color: darkgreen;
-    font-weight: 600;
+.section-heading {
+  font-size: 8vh;
+  text-align: center;
+  font-family: "Belanosima", serif;
+  color: darkgreen;
+  font-weight: 600;
+}
+.content-container {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+}
+.content {
+  font-size: 3.5vh;
+  font-family: "Sulphur Point", serif;
+  color: rgb(0, 0, 0);
+  font-weight: 700;
+  padding-top: 5%;
+  width: 100vh;
+  letter-spacing: 2px;
+  text-align: justify;
+  margin: 10px;
+}
+.content-img {
+  padding: 20px;
+}
+.content-img img {
+  min-width: 40vh;
+  min-height: 40vh;
+  border-radius: 100px;
+}
+.tes-container {
+  display: flex;
+  flex-direction: column;
+}
+.logo {
+  padding: 20px;
+  width: 15vh;
+  height: 13vh;
+}
+.heading-container {
+  display: flex;
+  gap: 30px;
+  width: 100vh;
+  height: fit-content;
+  margin-top: 25%;
+  font-family: "Luckiest Guy", serif;
+}
+.first-heading {
+  color: green;
+  transition: all 1s ease;
+  font-size: 15vh;
+}
+.first-heading:hover {
+  transform: translateY(-10px);
+}
+.second-heading {
+  color: rgb(0, 85, 0);
+  transition: all 1s ease;
+  font-size: 15vh;
+  letter-spacing: 15px;
+}
+.second-heading:hover {
+  transform: translateY(-10px);
+}
+.btn-get-started {
+  font-size: 3vh;
+  padding: 20px;
+  background-color: transparent;
+  font-family: "Belanosima", serif;
+  border-radius: 30px;
+  position: relative;
+  top: -15%;
+  text-align: center;
+  left: 30%;
+  color: black;
+}
 
+.card1 {
+  transform: rotate(-5deg);
 }
-.content-container{
-    display: flex;
-    flex-direction: row;
-    gap: 40px;
+.dev-container {
+  /* background-image: url("https://media3.giphy.com/media/eNMwgBhXLwdY1WRYCW/giphy.gif?cid=6c09b952prd2hf8m4gefvi12zv2mzljt1a7td474rsqkw2m5&ep=v1_stickers_search&rid=giphy.gif&ct=s"); */
+  min-height: 60vh;
+  flex-direction: column;
+  justify-content: space-between;
+  display: flex;
+  gap: 1%;
+  padding: 20px;
+  margin: 1%;
+  mix-blend-mode: multiply;
 }
-.content{
-    font-size: 3.5vh;
-    font-family: "Sulphur Point", serif;
-    color: rgb(0, 0, 0);
-    font-weight: 700;
-    padding-top: 5%;
-    width: 100vh;
-    letter-spacing: 2px;
-    text-align: justify;
-    margin: 10px;
-}
-.content-img{
-    padding: 20px; 
-}
-.content-img img{
-    min-width: 40vh;
-    min-height: 40vh;
-    border-radius: 100px;   
-}
-.tes-container{
-    display: flex;
-    flex-direction: column;
-}
-.logo{
-    padding: 20px;
-    width: 15vh;
-    height: 13vh;   
-}
-.heading-container{
-    display: flex;
-    gap: 30px;
-    width: 100vh;
-    height: fit-content;
-    margin-top: 25%;
-    font-family: "Luckiest Guy", serif;
-}
-.first-heading{
-    color: green;
-    transition: all 1s ease;
-    font-size: 15vh;
-}
-.first-heading:hover{
-    transform: translateY(-10px);
-}
-.second-heading{
-    color: rgb(0, 85, 0);
-    transition: all 1s ease;
-    font-size: 15vh;
-    letter-spacing: 15px;
-}
-.second-heading:hover{
-    transform: translateY(-10px);
-}
-.btn-get-started{
-    font-size: 3vh;
-    padding: 20px;
-    background-color: transparent;
-    font-family: "Belanosima", serif;
-    border-radius: 30px;
-    position: relative;
-    top: -15%;
-    text-align: center;
-    left: 30%;
-    color: black;
-}
-
-.card1{
-    transform: rotate(-5deg);
-}
-.dev-container{
-    background-image: url("https://media3.giphy.com/media/eNMwgBhXLwdY1WRYCW/giphy.gif?cid=6c09b952prd2hf8m4gefvi12zv2mzljt1a7td474rsqkw2m5&ep=v1_stickers_search&rid=giphy.gif&ct=s");
-   min-height: 60vh;
-    flex-direction: column;
-    justify-content: space-between;
-    display: flex;
-    gap: 1%;
-    padding: 20px;
-    margin: 1%;
-}
-footer{
-    height: fit-content;
-    background-color: rgb(226, 241, 219);
-    padding: 20px;
-    margin-top: 10%;
-    border-radius: 40px;
+footer {
+  height: fit-content;
+  padding: 20px;
+  margin-top: 10%;
+  border-radius: 40px;
+  background: rgba(236, 249, 221, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }

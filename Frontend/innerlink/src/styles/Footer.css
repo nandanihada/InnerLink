@@ -3,7 +3,11 @@
     /* border: 1px solid black; */
     background-image: url("https://i.pinimg.com/736x/db/fa/f0/dbfaf058ee677a6db473de2bf9f125e4.jpg");
     mix-blend-mode: multiply;
-    width: 100%;
+    width: 97%;
+    padding-inline: 5%;
+    padding: 20px;
+    border-radius: 30px;
+    border:1px solid lightgreen;
 }
 .links-container{
     position: relative;
