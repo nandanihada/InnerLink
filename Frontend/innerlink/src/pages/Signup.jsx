@@ -1,11 +1,48 @@
 import React from "react";
+import axios from "axios";
 import "../styles/signup.css";
 import Navbar from "../component/Navbar";
 import { delay, easeIn, easeInOut, motion, useScroll } from "motion/react";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { useNavigate } from "react-router-dom";
+import { Alert } from "@mui/material";
 
 function Signup() {
+    const[formData,setFormData]=React.useState({
+        username :"",
+        password :"",
+        email:"",
+    })
+
+    const handleChange = (e) => {
+        setFormData({
+          ...formData,
+          [e.target.name]: e.target.value,
+        });
+      };
+
+    const handleSubmit=async(e)=>{
+        e.preventDefault();
+        try{
+            const response=await axios.post(
+                "http://localhost:8080/get/user",{
+                    username:formData.username,
+                    password:formData.password,
+                    email:formData.email,
+                })
+                console.log(response)
+                if(response.status===200){
+                    alert("User Added")
+                    navigate("/feed")
+                }
+                else{
+                    alert("Something went Wrong")
+                }
+        }
+        catch(err){
+            console.log(err)
+        }
+    }
   const navigate = useNavigate();
   return (
     <>
@@ -24,7 +61,7 @@ function Signup() {
             navigate("/");
           }}
         />
-        <form className="form1">
+        <form className="form1" onSubmit={handleSubmit}>
           <div className="title1">
             Signup
             <br />
@@ -35,18 +72,21 @@ function Signup() {
             name="email"
             placeholder="Email"
             type="email"
+            onChange={handleChange}
           />
           <input
             className="input1"
-            name="Username"
+            name="username"
             placeholder="Username"
             type="username"
+            onChange={handleChange}
           />
           <input
             className="input1"
             name="password"
             placeholder="Password"
             type="password"
+            onChange={handleChange}
           />
 
           <div className="login-with1">
