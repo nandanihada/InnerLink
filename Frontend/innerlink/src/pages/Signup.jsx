@@ -26,7 +26,7 @@ function Signup() {
         />
         <form className="form1">
           <div className="title1">
-            Login
+            Signup
             <br />
             <span>Be a part of our community</span>
           </div>
@@ -35,6 +35,12 @@ function Signup() {
             name="email"
             placeholder="Email"
             type="email"
+          />
+          <input
+            className="input1"
+            name="Username"
+            placeholder="Username"
+            type="username"
           />
           <input
             className="input1"
@@ -68,7 +74,7 @@ function Signup() {
             </div>
           </div>
           <button className="button-confirm1">LETS GO →</button>
-          <span className="new-here1">New Here? Sign Up</span>
+          <span className="new-here1">Signup</span>
         </form>
       </div>
     </>
