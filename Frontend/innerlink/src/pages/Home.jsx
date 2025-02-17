@@ -5,9 +5,9 @@ import Cards from "../component/Cards";
 import CancelIcon from "@mui/icons-material/Cancel";
 import SecurityIcon from "@mui/icons-material/Security";
 import ThumbUpAltIcon from "@mui/icons-material/ThumbUpAlt";
+import DevCards from "../component/DevCards";
+import Footer from "../component/Footer";
 import { delay, easeIn, easeInOut, motion, useScroll } from "motion/react";
-import { Card } from "@mui/material";
-import PermIdentityIcon from "@mui/icons-material/PermIdentity";
 function Home() {
   const { scrollYProgress } = useScroll();
   return (
@@ -35,10 +35,11 @@ function Home() {
             whileHover={{
               scale: 1.1,
               backgroundColor: "green",
-              transition: { duration: 0.5},
+              transition: { duration: 0.5 },
               color: "white",
               border: "2px solid white",
-              transition:"all 1s ease"
+              cursor: "pointer",
+              transition: { duration: 0.5 },
             }}
           >
             Get Started
@@ -60,7 +61,11 @@ function Home() {
       <section className="section-one">
         <div className="first-section">
           <motion.h1
-            whileInView={{ x: [100, 0], opacity: [0, 1], delay: 1 }}
+            whileInView={{
+              x: [100, 0],
+              opacity: [0, 1],
+              transition: { duration: 0.5 },
+            }}
             className="section-heading"
           >
             Try Something New !
@@ -100,7 +105,11 @@ function Home() {
 
       <section className="section-two">
         <motion.h1
-          whileInView={{ x: [100, 0], opacity: [0, 1], delay: 1 }}
+          whileInView={{
+            x: [100, 0],
+            opacity: [0, 1],
+            transition: { duration: 0.5 },
+          }}
           className="section-heading"
         >
           Minimalism in Action
@@ -127,7 +136,6 @@ function Home() {
                   padding: "10px",
                 }}
                 className="card3"
-                
               />
             }
             content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, eum."
@@ -169,13 +177,31 @@ function Home() {
 
       <section className="section-three">
         <motion.h1
-          whileInView={{ x: [100, 0], opacity: [0, 1], delay: 1 }}
+          whileInView={{
+            x: [100, 0],
+            opacity: [0, 1],
+            transition: { duration: 0.5 },
+          }}
           className="section-heading"
         >
-          Our Users
+          Our Developers
         </motion.h1>
+        <div className="dev-container">
+          <DevCards
+            img="https://cdn1.iconfinder.com/data/icons/user-pictures/100/male3-512.png"
+            devName="Rishabh Gupta"
+            devDesc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, eum."
+          />
+          <DevCards
+            img="https://cdn3.iconfinder.com/data/icons/business-avatar-1/512/11_avatar-512.png"
+            devName="Nandani Hada"
+            devDesc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, eum."
+          />
+        </div>
       </section>
-      <footer></footer>
+      <footer>
+        <Footer />
+      </footer>
     </>
   );
 }
