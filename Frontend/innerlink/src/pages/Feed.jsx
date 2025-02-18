@@ -1,12 +1,10 @@
 import React from "react";
-import PersistentDrawerLeft from "../component/PersitentDrawer";
 import "../styles/Feed.css";
 import FaceIcon from "@mui/icons-material/Face";
 import NewspaperIcon from "@mui/icons-material/Newspaper";
 import LogoutIcon from "@mui/icons-material/Logout";
 import DynamicFeedIcon from "@mui/icons-material/DynamicFeed";
-import Cards from "../component/Cards";
-import Footer from "../component/Footer";
+
 
 function Feed() {
 
@@ -33,7 +31,7 @@ function Feed() {
                   <img src="" alt="" />
                   <FaceIcon
                     sx={{
-                      color: "white",
+                    
                       fontSize: "7vh",
                       color: "black",
                       cursor: "pointer",
@@ -47,11 +45,12 @@ function Feed() {
                 </div>
               </div>
               <div className="item2">
+              
                 <div className="item-container">
                   <img src="" alt="" />
                   <NewspaperIcon
                     sx={{
-                      color: "white",
+                    
                       fontSize: "7vh",
                       color: "black",
                       cursor: "pointer",
@@ -70,7 +69,7 @@ function Feed() {
                   <img src="" alt="" />
                   <DynamicFeedIcon
                     sx={{
-                      color: "white",
+        
                       fontSize: "7vh",
                       color: "black",
                       cursor: "pointer",
@@ -88,7 +87,7 @@ function Feed() {
                   <img src="" alt="" />
                   <LogoutIcon
                     sx={{
-                      color: "white",
+                    
                       fontSize: "7vh",
                       color: "black",
                       cursor: "pointer",

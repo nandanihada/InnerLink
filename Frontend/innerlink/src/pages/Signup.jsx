@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import "../styles/signup.css";
-import { delay, easeIn, easeInOut, motion, useScroll } from "motion/react";
+import {motion} from "motion/react";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -52,47 +52,79 @@ function Signup() {
       <div className="inner-container1">
         <ArrowBackIcon
           sx={{
-            color: "white",
+            color: "black",
             fontSize: "10vh",
             cursor: "pointer",
             position: "relative",
-            left: "0px",
+            left: "10px",
             top: "0px",
+            borderRadius: "50%",
             padding: "20px",
+            backgroundColor:"rgba(255, 255, 255, 0.45)",
+            backdropFilter: "blur(10px)",
+            WebkitBackdropFilter: "blur(10px)",
           }}
           onClick={() => {
             navigate("/");
           }}
         />
-        <form className="form1" onSubmit={handleSubmit}>
-          <div className="title1">
+        <motion.form
+          className="form1"
+          onSubmit={handleSubmit}
+          whileInView={{
+            opacity: [0, 1],
+            transition: { duration: 0.5 },
+          }}
+        >
+          <motion.div
+            className="title1"
+            whileInView={{
+              opacity: [0, 1],
+              y: [100, 0],
+              transition: { duration: 0.5 },
+            }}
+          >
             SIGN UP
             <br />
             <span>Be a part of our community</span>
-          </div>
-          <input
+          </motion.div>
+          <motion.input
             className="input1"
             name="email"
             placeholder="Email"
             type="email"
             onChange={handleChange}
+            whileInView={{
+              opacity: [0, 1],
+              transition: { delay: 1 },
+            }}
           />
-          <input
+          <motion.input
             className="input1"
             name="username"
             placeholder="Username"
             type="username"
             onChange={handleChange}
+            whileInView={{
+              opacity: [0, 1],
+
+              transition: { delay: 1.5 },
+            }}
           />
-          <input
+          <motion.input
             className="input1"
             name="password"
             placeholder="Password"
             type="password"
             onChange={handleChange}
+            whileInView={{
+              opacity: [0, 1],
+
+              transition: { delay: 1.5 },
+            }}
           />
 
-          <div className="login-with1">
+          {/* <div className="login-with1">
             <div className="button-log1"></div>
             <div className="button-log1">
               <svg
@@ -115,9 +147,25 @@ function Signup() {
                 <path d="M40.43,21.739h-7.645v-5.014c0-1.883,1.248-2.322,2.127-2.322c0.877,0,5.395,0,5.395,0V6.125l-7.43-0.029  c-8.248,0-10.125,6.174-10.125,10.125v5.518h-4.77v8.53h4.77c0,10.947,0,24.137,0,24.137h10.033c0,0,0-13.32,0-24.137h6.77  L40.43,21.739z"></path>
               </svg>
             </div>
-          </div>
-          <button className="button-confirm1">LETS GO →</button>
-          <span className="new-here1">
+          </div> */}
+          <motion.button
+            className="button-confirm1"
+            whileInView={{
+              opacity: [0, 1],
+              x: [100, 0],
+              transition: { delay: 2 },
+            }}
+          >
+            LETS GO →
+          </motion.button>
+          <motion.span
+            className="new-here1"
+            whileInView={{
+              opacity: [0, 1],
+              x: [100, 0],
+              transition: { delay: 2 },
+            }}
+          >
             Already A User ?{" "}
             <Link
               to="/login"
@@ -129,8 +177,8 @@ function Signup() {
             >
               Login
             </Link>
-          </span>
-        </form>
+          </motion.span>
+        </motion.form>
       </div>
     </>
   );

@@ -1,10 +1,9 @@
 import React from "react";
 import "../styles/login.css";
-import Navbar from "../component/Navbar";
-import { delay, easeIn, easeInOut, motion, useScroll } from "motion/react";
+import { motion} from "motion/react";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { Link, useNavigate } from "react-router-dom";
-import Footer from "../component/Footer";
+
 
 function Login() {
   const navigate = useNavigate();
@@ -13,7 +12,7 @@ function Login() {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://192.168.1.116:8080/get/verify", {
+      const response = await fetch("http://localhost:8080/get/verify", {
         method: "GET",
         headers: {
           Authorization: "Basic " + btoa(username + ":" + password),
@@ -25,7 +24,7 @@ function Login() {
         const authToken = btoa(username + ":" + password);
         // console.log(data);
         localStorage.setItem("authToken", authToken);
-        localStorage.setItem("username", username); 
+        localStorage.setItem("username", username);
         navigate("/feed");
       } else {
         alert("Please Check the Credentials");
@@ -38,42 +37,70 @@ function Login() {
 
   return (
     <>
-      <div className="inner-container">
+      <motion.div className="inner-container">
         <ArrowBackIcon
           sx={{
-            color: "white",
+            color: "black",
             fontSize: "10vh",
             cursor: "pointer",
             position: "relative",
-            left: "0px",
+            left: "10px",
             top: "0px",
+            borderRadius: "50%",
             padding: "20px",
+            backgroundColor:"rgba(255, 255, 255, 0.45)",
+            backdropFilter: "blur(10px)",
+            WebkitBackdropFilter: "blur(10px)",
           }}
           onClick={() => {
             navigate("/");
           }}
         />
-        <form className="form" onSubmit={handleLogin}>
-          <div className="title">
+        <motion.form
+          className="form"
+          onSubmit={handleLogin}
+          whileInView={{
+            opacity: [0, 1],
+            transition: { duration: 0.5 },
+          }}
+        >
+          <motion.div
+            className="title"
+            whileInView={{
+              opacity: [0, 1],
+              y: [100, 0],
+              transition: { duration: 0.5 },
+            }}
+          >
             LOGIN
             <br />
             <span>Explore the Forest !</span>
-          </div>
-          <input
+          </motion.div>
+          <motion.input
             className="input"
             name="username"
             placeholder="Username"
             type="username"
             onChange={(e) => setUsername(e.target.value)}
+            whileInView={{
+              opacity: [0, 1],
+
+              transition: { delay: 1 },
+            }}
           />
-          <input
+          <motion.input
             className="input"
             name="password"
             placeholder="Password"
             type="password"
             onChange={(e) => setPassword(e.target.value)}
-          />
+            whileInView={{
+              opacity: [0, 1],
 
+              transition: { delay: 1.5 },
+            }}
+          />
+          {/* 
           <div className="login-with">
             <div className="button-log"></div>
             <div className="button-log">
@@ -97,9 +124,25 @@ function Login() {
                 <path d="M40.43,21.739h-7.645v-5.014c0-1.883,1.248-2.322,2.127-2.322c0.877,0,5.395,0,5.395,0V6.125l-7.43-0.029  c-8.248,0-10.125,6.174-10.125,10.125v5.518h-4.77v8.53h4.77c0,10.947,0,24.137,0,24.137h10.033c0,0,0-13.32,0-24.137h6.77  L40.43,21.739z"></path>
               </svg>
             </div>
-          </div>
-          <button className="button-confirm">LETS GO →</button>
-          <span className="new-here">
+          </div> */}
+          <motion.button
+            className="button-confirm"
+            whileInView={{
+              opacity: [0, 1],
+              x: [100, 0],
+              transition: { delay: 2 },
+            }}
+          >
+            LETS GO →
+          </motion.button>
+          <motion.span
+            className="new-here"
+            whileInView={{
+              opacity: [0, 1],
+              x: [100, 0],
+              transition: { delay: 2 },
+            }}
+          >
             New Here?{" "}
             <Link
               to={"/signup"}
@@ -111,9 +154,9 @@ function Login() {
             >
               Sign Up
             </Link>
-          </span>
-        </form>
-      </div>
+          </motion.span>
+        </motion.form>
+      </motion.div>
     </>
   );
 }
