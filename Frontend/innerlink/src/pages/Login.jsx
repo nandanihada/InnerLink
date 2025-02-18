@@ -26,13 +26,13 @@ function Login() {
         // console.log(data);
         localStorage.setItem("authToken", authToken);
         localStorage.setItem("username", username); 
-        // localStorage.setItem("username", data.username);
         navigate("/feed");
       } else {
-        alert("Something went wrong");
+        alert("Please Check the Credentials");
       }
     } catch (err) {
       console.log(err);
+      alert("Something went wrong");
     }
   };
 

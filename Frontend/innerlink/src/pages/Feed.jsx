@@ -10,6 +10,13 @@ import Post from "../component/Post";
 import Footer from "../component/Footer";
 
 function Feed() {
+
+  const handleLogOut = () => {
+    localStorage.removeItem("username");
+    localStorage.removeItem("email");
+    localStorage.removeItem("authToken");
+    window.location.href = "/login";
+  };
   return (
     <>
       <div className="full-container">
@@ -91,6 +98,7 @@ function Feed() {
                       transition: "all 1s ease",
                       "&:hover": { backgroundColor: "green", color: "white" },
                     }}
+                    onClick={handleLogOut}  
                   />
                   <h2>Log Out</h2>
                 </div>
