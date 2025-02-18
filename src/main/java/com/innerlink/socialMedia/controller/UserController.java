@@ -22,12 +22,13 @@ public class UserController {
     @Autowired
     private UserRepo userRepo;
     @PostMapping
-
+@CrossOrigin
    @GetMapping
     public ResponseEntity<?> getUser(){
        List<User> user = userServices.getUser();
        return  new ResponseEntity<>(user,HttpStatus.OK);
    }
+   @CrossOrigin
    @GetMapping("/username")
    public ResponseEntity<User> getUserById(){
         //oo bhai tum password ,username fetch karke lao
@@ -39,11 +40,13 @@ public class UserController {
         }
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
    }
+   @CrossOrigin
    @DeleteMapping
     public ResponseEntity<?> removeAlluser(){
         userServices.removeAlluser();
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
    }
+   @CrossOrigin
    @DeleteMapping("/username")
     public String removeUser(){
        Authentication authenticationManager= SecurityContextHolder.getContext().getAuthentication();
@@ -51,7 +54,7 @@ public class UserController {
         return userServices.removeUser(username);
    }
 
-
+@CrossOrigin
    @PutMapping("/username")
     public ResponseEntity<?> updateUser(@RequestBody User user){
        Authentication authenticationManager= SecurityContextHolder.getContext().getAuthentication();

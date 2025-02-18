@@ -13,7 +13,7 @@ function Login() {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:8080/get/verify", {
+      const response = await fetch("http://192.168.1.116:8080/get/verify", {
         method: "GET",
         headers: {
           Authorization: "Basic " + btoa(username + ":" + password),

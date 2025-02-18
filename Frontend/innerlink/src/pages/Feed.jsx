@@ -6,7 +6,6 @@ import NewspaperIcon from "@mui/icons-material/Newspaper";
 import LogoutIcon from "@mui/icons-material/Logout";
 import DynamicFeedIcon from "@mui/icons-material/DynamicFeed";
 import Cards from "../component/Cards";
-import Post from "../component/Post";
 import Footer from "../component/Footer";
 
 function Feed() {
