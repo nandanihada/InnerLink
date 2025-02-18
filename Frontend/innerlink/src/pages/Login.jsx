@@ -55,14 +55,14 @@ function Login() {
         />
         <form className="form" onSubmit={handleSubmit}>
           <div className="title">
-            Login
+            LOGIN
             <br />
             <span>Explore the Forest !</span>
           </div>
           <input
             className="input"
             name="username"
-            placeholder="Enter the Username"
+            placeholder="Username"
             type="username"
             onChange={(e) => setUsername(e.target.value)}
           />
@@ -114,8 +114,6 @@ function Login() {
           </span>
         </form>
       </div>
-
-      <Footer />
     </>
   );
 }
