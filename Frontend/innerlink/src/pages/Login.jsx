@@ -9,33 +9,32 @@ import Footer from "../component/Footer";
 function Login() {
   const navigate = useNavigate();
   const [username, setUsername] = React.useState("");
-  const [password,setPassword]=React.useState("");
+  const [password, setPassword] = React.useState("");
   const handleLogin = async (e) => {
     e.preventDefault();
-    try{
-      const response = await fetch("https://localhost:8080/get/verify", {
+    try {
+      const response = await fetch("http://localhost:8080/get/verify", {
         method: "GET",
-        headers:{
-          Authorization:"Basic "+btoa(username+":"+password),
+        headers: {
+          Authorization: "Basic " + btoa(username + ":" + password),
           "Content-Type": "application/json",
         },
-      })
-      if(response.status===200){
-        const data=await response.json();
-        const authToken=btoa(username+":"+password);
-        console.log(data);
-        localStorage.setItem("authToken",authToken);
-        localStorage.setItem("username",data.username);
+      });
+      if (response.status === 200) {
+        // const data = await response.json();
+        const authToken = btoa(username + ":" + password);
+        // console.log(data);
+        localStorage.setItem("authToken", authToken);
+        localStorage.setItem("username", username); 
+        // localStorage.setItem("username", data.username);
         navigate("/feed");
-      }
-      else{
+      } else {
         alert("Something went wrong");
       }
-    }
-    catch(err){
+    } catch (err) {
       console.log(err);
     }
-  }
+  };
 
   return (
     <>
