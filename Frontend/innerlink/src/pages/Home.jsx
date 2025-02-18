@@ -136,7 +136,7 @@ function Home() {
                   fontSize: "10vh",
                   cursor: "pointer",
                   position: "relative",
-                  left: "19vh",
+                  left: "15vh",
                   top: "20px",
                   padding: "10px",
                 }}
@@ -153,7 +153,7 @@ function Home() {
                   fontSize: "10vh",
                   cursor: "pointer",
                   position: "relative",
-                  left: "19vh",
+                  left: "15vh",
                   top: "20px",
                   padding: "10px",
                 }}
@@ -168,9 +168,9 @@ function Home() {
                   color: "green",
                   fontSize: "10vh",
                   cursor: "pointer",
-                  position: "relative",
-                  left: "19vh",
-                  top: "20px",
+                  position:"relative",
+                  left:"15vh",
+                  top:"20px",
                   padding: "10px",
                 }}
               />

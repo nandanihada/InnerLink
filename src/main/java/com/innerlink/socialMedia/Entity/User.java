@@ -22,9 +22,31 @@ public class User {
     private String username;
     @NonNull
     private String password;
+    @NonNull
+    private String email;
+    private String aboutuser;
     @DBRef
-    private List<PostEntries> postEntries=new ArrayList<>();
-private List<String> roles;
+    private List<PostEntries> postEntries = new ArrayList<>();
+    private List<String> roles;
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+
+    public String getAboutuser() {
+        return aboutuser;
+    }
+
+    public void setAboutuser(String aboutuser) {
+        this.aboutuser = aboutuser;
+    }
+
+
 
 
     //getter and setter
@@ -52,7 +74,6 @@ private List<String> roles;
     public void setPassword(String password) {
         this.password = password;
     }
-
 
 
     public List<PostEntries> getPostEntries() {
