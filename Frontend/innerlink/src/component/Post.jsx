@@ -3,7 +3,7 @@ import "../styles/post.css";
 function post() {
   return (
     <>
-  
+      
 
     </>
   )
