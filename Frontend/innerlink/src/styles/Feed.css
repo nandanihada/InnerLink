@@ -83,3 +83,37 @@
   position: relative;
   top: 30vh;
 }
+.post-container{
+  border: 1px solid rgb(255, 0, 0);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+  align-items: center;
+}
+.postCard{
+  border: 5px solid black;
+  padding: 20px;
+ width: 50vh;
+ height: auto;
+
+ border-radius: 50px;
+}
+.postCard-img{
+  padding: 20px;
+  border: 1px solid rgb(0, 17, 255);
+  height: 20vh;
+}
+.postCard-img-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  width: auto;
+}
+.postCard-caption{
+  font-size: 2vh;
+  font-family: "Belanosima", serif;
+
+}

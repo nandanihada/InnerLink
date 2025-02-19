@@ -124,14 +124,14 @@ function Feed() {
               <div className="post-container">
                 {getPost.map((post) => (
                   <div className="postCard" key={post.postid}>
-                    <div className="postCard-img">
+                      <h2 className="postCard-title">{post.title}</h2>
+                    <div className="postCard-img-container">
                       <img
-                        src={post.postImage}
+                        src="https://cdn.dribbble.com/users/2071065/screenshots/6559618/attachments/1401967/dribble_4-19.png?resize=400x300&vertical=center"
                         alt="Post-Image Comes here!"
                         className="postCard-img"
                       />
                     </div>
-                    <h2 className="postCard-title">{post.title}</h2>
                     <p className="postCard-caption">{post.caption}</p>
                   </div>
                 ))}
@@ -140,7 +140,7 @@ function Feed() {
               <div className="post-container">
                 <div className="postCard">
                   <div className="postCard-img">
-                    <img src="" alt="No Post" className="postCard-img" />
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d1/Image_not_available.png" alt="No Post" className="postCard-img" />
                   </div>
                   <h2 className="postCard-title">No Post Available</h2>
                   <p className="postCard-caption">You can Post Now</p>
