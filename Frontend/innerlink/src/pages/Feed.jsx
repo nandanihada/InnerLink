@@ -7,6 +7,27 @@ import DynamicFeedIcon from "@mui/icons-material/DynamicFeed";
 
 
 function Feed() {
+  const [getPost, setPost] = React.useState([]);       //response array me le re isliye [] 2 bracket extra hai
+  const getData = async () => {
+    try { 
+      const response = await fetch("http://localhost:8080/get/all", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      if(response.status === 200){
+        const data = await response.json();
+        setPost(data);
+      }
+      else{
+        alert("Something went wrong");
+      }
+    } catch (err) {
+      console.log(err);
+    }
+
+  }
 
   const handleLogOut = () => {
     localStorage.removeItem("username");
@@ -104,10 +125,8 @@ function Feed() {
             </div>
           </div>
           <div class="body">
-            <div className="post-container">
-             
-              
-            </div>
+            
+            
           </div>
         </section>
       </div>
