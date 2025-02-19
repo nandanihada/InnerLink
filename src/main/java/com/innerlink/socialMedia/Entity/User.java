@@ -47,8 +47,6 @@ public class User {
     }
 
 
-
-
     //getter and setter
     public ObjectId getId() {
         return id;
