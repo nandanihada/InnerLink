@@ -10,11 +10,9 @@
 }
 .full-container {
   z-index: -1;
+  /* background-color: #D99D81; */
   background-image: url("https://i.postimg.cc/FzB5zV1L/Untitled-design.png");
-  background-size: contain;
-  
-  
-
+  /* background-size: contain; */
 }
 
 .sidebar {
@@ -35,6 +33,7 @@
   grid-area: body;
   min-height: 100vh;
   border: 1px solid black;
+  background-color: transparent;
   /* background: rgba(255, 255, 255, 0.45);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -97,43 +96,43 @@
 }
 .postCard {
   padding: 20px;
-  width: 50vh;
-  height: 60vh;
-  border-radius: 54px;
-  background: #f4f7f3;
-  
-  
-    transition: transform 0.3s ease-in-out;
+  /* min-width: 60vh;
+  min-height: 70vh; */
+ max-width: 55vh;
+ height: auto;
+  background: rgba(178, 241, 141, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
 
+  transition: transform 0.3s ease-in-out;
 
-
-  position: relative; 
-  overflow: hidden; 
-  border-right: 15px solid #c1bbbb;
-  border-left: 5px solid #abaaaa;
-  border-top: 5px solid #7c7878;
-  border-bottom: 15px solid #6b6868;
+  position: relative;
+  overflow: hidden;
+  border-right: 15px solid #77b254;
+  border-left: 5px solid #77b254;
+  border-top: 5px solid #77b254;
+  border-bottom: 15px solid #77b254;
 }
-.postCard:hover {
-    transform: scale(1.05);
-}
-
 
 .postCard-img {
   padding: 20px;
-  height: 20vh;
+  height: 40vh;
+  border-radius: 50px;
 }
 
 .postCard-img-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 20vh;
-  min-width: 20vh;
+  min-height: 30vh;
+  min-width: 30vh;
 }
 
 .postCard-caption {
-  font-size: 2vh;
+  font-size: 2.5vh;
   font-family: "Belanosima", serif;
 }
 
@@ -148,20 +147,53 @@
   opacity: 0.9;
   pointer-events: none;
 }
-
+.comment {
+  font-size: 2vh;
+  font-family: "Belanosima", serif;
+  padding: 0.02px;
+}
+.add-comment-container{
+  padding: 20px;
+}
+.add-comment{
+  /* padding: 20px; */
+  width: 50vh;
+  position: relative;
+  top: 25%;
+  font-size: 2vh;
+  background-color: #bdeca1;
+  border-radius: 20px;
+  resize: vertical;
+  border: none;
+  padding: 10px;
+  font-family: "Belanosima", serif;
+}
 .postCard::before {
   top: 10px;
   left: 10px;
 }
+.comment-list{
+  list-style-type: none;
+}
 .btn-like {
   padding: 10px;
-  width: 10vh;
+  width: 20vh;
   border-radius: 20px;
   font-size: 20px;
   position: relative;
   top: -15%;
-  color: palevioletred;
+  color: rgb(230, 42, 236);
   font-family: "Belanosima", serif;
+  border: 5px dotted rgb(230, 42, 236);
+  background-color: transparent;
+}
+.postCard-title {
+  text-align: center;
+  font-size: 5vh;
+  font-family: "Luckiest Guy", serif;
+  color: #f34d00;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
 .like-icon {
   position: relative;
@@ -171,4 +203,34 @@
 .postCard-like {
   position: relative;
   top: -15%;
+}
+.postCard-stat-container {
+  display: flex;
+  flex-direction: row;
+  gap: 20%;
+  justify-content: center;
+}
+.btn-comment{
+  padding: 20px;
+  width: 10vh;
+  border-radius: 50%;
+  font-size: 20px;
+  position: relative;
+  left: 45%;
+  color: #77B254;
+  font-family: "Belanosima", serif;
+  border: 5px dotted #77B254;
+  background-color: transparent;
+  transition: all 1s ease;
+}
+.btn-comment:hover{
+  background-color:#77B254 ;
+  color: white;
+  border: 5px dotted #77B254;
+  padding: 20px;
+}
+.arrow-icon{
+  position: relative;
+  top: 14%;
+  left: 3%;
 }

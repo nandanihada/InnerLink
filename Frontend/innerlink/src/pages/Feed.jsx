@@ -1,10 +1,13 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import "../styles/Feed.css";
 import FaceIcon from "@mui/icons-material/Face";
 import NewspaperIcon from "@mui/icons-material/Newspaper";
 import LogoutIcon from "@mui/icons-material/Logout";
 import DynamicFeedIcon from "@mui/icons-material/DynamicFeed";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import CommentIcon from "@mui/icons-material/Comment";
+import { motion } from "framer-motion";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
 function Feed() {
   const [getPost, setPost] = React.useState([]);
@@ -155,13 +158,58 @@ function Feed() {
                       />
                     </div>
                     <div className="postCard-stat-container">
-                      <button className="btn-like" onClick={handleLikes}>
+                      <motion.button
+                        className="btn-like"
+                        onClick={handleLikes}
+                        whileHover={{
+                          scale: 1.1,
+                          backgroundColor: "rgb(230, 42, 236)",
+                          color: "white",
+                        }}
+                        whileTap={{ scale: 0.9 }}
+                      >
                         <FavoriteBorderIcon className="like-icon" />
-                        <span className="postCard-likes">
-                          {post.likes}</span>
-                      </button>
+                        <span className="postCard-likes">{post.likes}</span>
+                      </motion.button>
                     </div>
-                    <p className="postCard-caption">{post.caption}</p>
+
+                    <p className="postCard-caption">
+                      <span>{post.postedby}</span>
+                      {post.caption}
+                    </p>
+                    <div className="comments-container">
+                      {post.comments && post.comments.length > 0 ? (
+                        post.comments.map((comment, index) => (
+                          <div key={index} className="comment">
+                            <ul className="comment-list">
+                              <li>{comment}</li>
+                            </ul>
+                          </div>
+                        ))
+                      ) : (
+                        <p className="no-comments">No comments yet</p>
+                      )}
+                    </div>
+                    <div className="add-comment-container">
+                      <textarea
+                        className="add-comment"
+                        placeholder=" Add a comment..."
+                      />
+                    </div>
+                    <motion.button
+                      className="btn-comment"
+                      initial={{ x: 0 }}
+                      animate={{ x: [0, 100, -20], opacity: [1, 0, 1] }}
+                      transition={{ ease: "easeInOut", duration: 3 }}
+                      exit={{ x: 0 }}
+                    >
+                      <span className="postCard-comments">
+                        <ArrowForwardIcon
+                          className="arrow-icon"
+                          sx={{ fontSize: "4vh", fontWeight: "bold" }}
+                        />
+                      </span>
+                    </motion.button>
                   </div>
                 ))}
               </div>
