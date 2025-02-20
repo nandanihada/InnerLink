@@ -20,6 +20,19 @@ public class PostEntries {
     private  String caption;
     private List<String> likedBy;
     private int likes;
+    private String postedby;
+
+
+
+    public String getPostedby() {
+        return postedby;
+                                }
+
+    public void setPostedby(String postedby) {
+        this.postedby = postedby;
+                                             }
+
+
 
     public boolean isPrivate() {
         return isPrivate;
