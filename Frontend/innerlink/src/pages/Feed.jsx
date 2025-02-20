@@ -4,6 +4,7 @@ import FaceIcon from "@mui/icons-material/Face";
 import NewspaperIcon from "@mui/icons-material/Newspaper";
 import LogoutIcon from "@mui/icons-material/Logout";
 import DynamicFeedIcon from "@mui/icons-material/DynamicFeed";
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 
 function Feed() {
   const [getPost, setPost] = React.useState([]);
@@ -124,12 +125,17 @@ function Feed() {
               <div className="post-container">
                 {getPost.map((post) => (
                   <div className="postCard" key={post.postid}>
-                      <h2 className="postCard-title">{post.title}</h2>
+                    <h2 className="postCard-title">{post.title}</h2>
                     <div className="postCard-img-container">
                       <img
                         src="https://cdn.dribbble.com/users/2071065/screenshots/6559618/attachments/1401967/dribble_4-19.png?resize=400x300&vertical=center"
                         alt="Post-Image Comes here!"
                         className="postCard-img"
+                      />
+                    </div>
+                    <div className="postCard-stat-container">
+                      <FavoriteBorderIcon
+                        className="icon-likes"
                       />
                     </div>
                     <p className="postCard-caption">{post.caption}</p>
@@ -140,7 +146,11 @@ function Feed() {
               <div className="post-container">
                 <div className="postCard">
                   <div className="postCard-img">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d1/Image_not_available.png" alt="No Post" className="postCard-img" />
+                    <img
+                      src="https://upload.wikimedia.org/wikipedia/commons/d/d1/Image_not_available.png"
+                      alt="No Post"
+                      className="postCard-img"
+                    />
                   </div>
                   <h2 className="postCard-title">No Post Available</h2>
                   <p className="postCard-caption">You can Post Now</p>

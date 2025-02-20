@@ -24,7 +24,7 @@ public class PostEntries {
     public boolean isPrivate() {
         return isPrivate;
     }
-
+    
     public void setPrivate(boolean aPrivate) {
         isPrivate = aPrivate;
     }
