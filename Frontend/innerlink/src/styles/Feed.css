@@ -10,8 +10,11 @@
 }
 .full-container {
   z-index: -1;
-  background-image: url("https://cdn.vectorstock.com/i/500p/18/86/bright-green-leaf-pattern-vector-54241886.jpg");
-  background-size: auto;
+  background-image: url("https://i.postimg.cc/FzB5zV1L/Untitled-design.png");
+  background-size: contain;
+  
+  
+
 }
 
 .sidebar {
@@ -95,13 +98,26 @@
 .postCard {
   padding: 20px;
   width: 50vh;
-  height: 50vh;
+  height: 60vh;
   border-radius: 54px;
   background: #f4f7f3;
-  /* box-shadow: 44px 44px 40px #848c82, -44px -44px 40px #ffffff; */
-  position: relative;
-  overflow: hidden;
+  
+  
+    transition: transform 0.3s ease-in-out;
+
+
+
+  position: relative; 
+  overflow: hidden; 
+  border-right: 15px solid #c1bbbb;
+  border-left: 5px solid #abaaaa;
+  border-top: 5px solid #7c7878;
+  border-bottom: 15px solid #6b6868;
 }
+.postCard:hover {
+    transform: scale(1.05);
+}
+
 
 .postCard-img {
   padding: 20px;
