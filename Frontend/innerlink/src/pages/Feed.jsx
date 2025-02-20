@@ -9,6 +9,27 @@ import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 function Feed() {
   const [getPost, setPost] = React.useState([]);
 
+  const handleLikes = async (postId) => {
+    try {
+      const authToken = localStorage.getItem("authToken");
+      const response = await fetch(
+        `http://localhost:8080/post/likes/${postId}`,
+        {
+          headers: {
+            method: "POST",
+            Authorization: "Basic " + authToken,
+          },
+        }
+      );
+      if (response.ok) {
+        window.reload();
+      } else {
+        alert("Unable to Fetch the Post");
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  };
   const getPostData = async () => {
     try {
       const authToken = localStorage.getItem("authToken");
@@ -134,9 +155,11 @@ function Feed() {
                       />
                     </div>
                     <div className="postCard-stat-container">
-                      <FavoriteBorderIcon
-                        className="icon-likes"
-                      />
+                      <button className="btn-like" onClick={handleLikes}>
+                        <FavoriteBorderIcon className="like-icon" />
+                        <span className="postCard-likes">
+                          {post.likes}</span>
+                      </button>
                     </div>
                     <p className="postCard-caption">{post.caption}</p>
                   </div>
