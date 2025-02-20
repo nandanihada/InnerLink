@@ -1,0 +1,32 @@
+.headin{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    font-size: 3vh;
+    font-family: "Belanosima", serif;
+    font-weight: 600;
+    font-size: 40px;
+    margin-top: 6vh;
+    margin-right: 15vh;
+    gap: 8vh;
+    color: #333;
+  transition: transform 0.4s ease, color 0.4s ease, letter-spacing 0.4s ease;
+     
+}
+.headin:hover {
+    transform: scale(1.1) rotate(2deg);
+    color: #0c8929;
+    letter-spacing: 3px;
+  }
+.img{
+    margin-top: 5vh;
+    width: 20vh;
+    height: 20vh;
+}
+.together{
+    margin-top: 10vh;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 80vh;
+    
+}
