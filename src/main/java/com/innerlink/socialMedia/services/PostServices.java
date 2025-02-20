@@ -29,7 +29,9 @@ public class PostServices {
 
 
     public String postEntries(PostEntries postEntries, String username) {
-        User user = userServices.UserById(username);//name se user dhundha
+        User user = userServices.UserById(username);
+          postEntries.setPostedby(username);
+          //name se user dhundha
         PostEntries saved = postRepo.save(postEntries);//an entry save kari post me jo aayi thi
         user.getPostEntries().add(saved);//user ki entry me save krdi
         userServices.updateUser(user); //user ko userservice me save kar diya
