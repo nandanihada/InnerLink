@@ -12,12 +12,13 @@ import java.util.Optional;
 
 @Component
 public class UserDetailsServiceImpl implements UserDetailsService {
-@Autowired
-private UserRepo userRepo;
+    @Autowired
+    private UserRepo userRepo;
+
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        User users=userRepo.findByUsername(username);
-        if(users != null){
+        User users = userRepo.findByUsername(username);
+        if (users != null) {
             return org.springframework.security.core.userdetails.User.builder()
                     .username(users.getUsername())
                     .password(users.getPassword())

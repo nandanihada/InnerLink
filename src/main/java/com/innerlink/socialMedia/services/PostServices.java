@@ -24,10 +24,10 @@ public class PostServices {
     public UserServices userServices;
 
     public List<PostEntries> getPost() {
-        return postRepo.findAll().stream().filter(post->!post.isPrivate()).toList();
+        return postRepo.findAll().stream().filter(post -> !post.isPrivate()).toList();
     }
 
-
+@Transactional
     public String postEntries(PostEntries postEntries, String username) {
         User user = userServices.UserById(username);
           postEntries.setPostedby(username);
@@ -49,40 +49,37 @@ public class PostServices {
     }
 
     public void deleteByid(String id, String username) {
-        try{
+        try {
             User user = userServices.UserById(username);
             user.getPostEntries().removeIf(x -> x.getPostid().equals(id));
             userServices.updateUser(user);
             postRepo.deleteById(id);
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             throw new RuntimeException("Something went Wrong !");
         }
     }
 
     public void likedBy(String postid) {
-       try{
-           Authentication auth= SecurityContextHolder.getContext().getAuthentication();
-           String username=auth.getName();
-           PostEntries post = postRepo.findBypostid(postid);
-           if (post != null) {
-               int likes = post.getLikes();
-               post.setLikes(likes + 1);
-               if(post.getLikedBy()==null){
-                   post.setLikedBy(new ArrayList<>());
-               }
-               if(post.getLikedBy().contains(username)){
-                   throw new RuntimeException("Username Already Exists");
-               }
-               else{
-                   post.getLikedBy().add(username);
-               }
-               postRepo.save(post);
-           }
-       }
-       catch (Exception e){
-           throw new RuntimeException("Something went Wrong !");
-       }
+        try {
+            Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+            String username = auth.getName();
+            PostEntries post = postRepo.findBypostid(postid);
+            if (post != null) {
+                int likes = post.getLikes();
+                post.setLikes(likes + 1);
+                if (post.getLikedBy() == null) {
+                    post.setLikedBy(new ArrayList<>());
+                }
+                if (post.getLikedBy().contains(username)) {
+                    throw new RuntimeException("Username Already Exists");
+                } else {
+                    post.getLikedBy().add(username);
+                }
+                postRepo.save(post);
+            }
+        } catch (Exception e) {
+            throw new RuntimeException("Something went Wrong !");
+        }
     }
 
     public void addComment(String comment, String postid) {
@@ -102,14 +99,13 @@ public class PostServices {
         }
     }
 
-    public void setPostPrivate(String username,String postid){
-        User user=userServices.UserById(username);
-        if(user.getPostEntries().stream().anyMatch(post -> post.getPostid().equals(postid))) {
-            PostEntries post=postRepo.findBypostid(postid);
+    public void setPostPrivate(String username, String postid) {
+        User user = userServices.UserById(username);
+        if (user.getPostEntries().stream().anyMatch(post -> post.getPostid().equals(postid))) {
+            PostEntries post = postRepo.findBypostid(postid);
             post.setPrivate(!post.isPrivate());
             postRepo.save(post);
-        }
-        else{
+        } else {
             throw new RuntimeException("Post Not Found");
         }
     }

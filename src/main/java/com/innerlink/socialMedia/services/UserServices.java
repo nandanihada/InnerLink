@@ -16,43 +16,45 @@ import java.util.List;
 
 @Service
 public class UserServices {
-    private  static  final PasswordEncoder passwordencoder=new BCryptPasswordEncoder();
+    private static final PasswordEncoder passwordencoder = new BCryptPasswordEncoder();
     @Autowired
     private UserRepo userRepo;
-    public String addUser(User user){
+
+    public String addUser(User user) {
         userRepo.save(user);
         return "User is added";
     }
-    public List<User> getUser(){
-       List<User> users= userRepo.findAll();
+
+    public List<User> getUser() {
+        List<User> users = userRepo.findAll();
 
         return users;
     }
-    public User UserById(String username){
-       return userRepo.findByUsername(username);
+
+    public User UserById(String username) {
+        return userRepo.findByUsername(username);
     }
 
-    public String removeUser(String username ){
-       User u= userRepo.findByUsername(username);
-       userRepo.delete(u);
+    public String removeUser(String username) {
+        User u = userRepo.findByUsername(username);
+        userRepo.delete(u);
         return "User removed successfully";
     }
 
-    public String removeAlluser(){
+    public String removeAlluser() {
         userRepo.deleteAll();
         return "Databse is empty";
     }
 
-public void updateUser(User user){
-       userRepo.save(user);
-}
-public void saveNewUser(User user){
+    public void updateUser(User user) {
+        userRepo.save(user);
+    }
+
+    public void saveNewUser(User user) {
         user.setPassword(passwordencoder.encode(user.getPassword()));
         user.setRoles(Arrays.asList("USER"));
         userRepo.save(user);
-}
-
-
+    }
 
 
 }

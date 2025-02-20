@@ -7,24 +7,32 @@ import SecurityIcon from "@mui/icons-material/Security";
 import ThumbUpAltIcon from "@mui/icons-material/ThumbUpAlt";
 import DevCards from "../component/DevCards";
 import Footer from "../component/Footer";
-import { delay, easeIn, easeInOut, motion, useScroll } from "motion/react";
+import {
+  motion,
+  useInView
+} from "motion/react";
 import { useNavigate } from "react-router-dom";
 function Home() {
-  const { scrollYProgress } = useScroll();
+  // const { scrollYProgress } = useScroll();
+  const ref = React.useRef(null);
+  const isInView = useInView(ref, { once: true });
   const navigate = useNavigate();
+  // useEffect(() => {}, [isInView]);
   return (
     <>
       <Navbar />
       <motion.div className="top-container">
         <motion.div
+          ref={ref}
           className="heading-top"
           whileInView={{
             x: [100, 0],
             opacity: [0, 1],
             transition: { duration: 0.5, delay: 0.5 },
           }}
+          viewport={{ once: true }}
         >
-          <div className="heading-container">
+          <div className="heading-container" ref={ref}>
             <h1 className="first-heading">INNER</h1>
             <h1 className="second-heading">LINK</h1>
           </div>
@@ -52,6 +60,7 @@ function Home() {
         </motion.div>
         <div className="image-top">
           <motion.img
+            ref={ref}
             whileInView={{
               x: [-100, 0],
               opacity: [0, 1],
@@ -59,6 +68,7 @@ function Home() {
             }}
             src="https://png.pngtree.com/png-clipart/20240516/original/pngtree-illustration-of-camping-in-the-wild-forest-png-image_15107429.png"
             alt=""
+            viewport={{ once: true }}
             className="img-top"
           />
         </div>
@@ -66,11 +76,13 @@ function Home() {
       <section className="section-one">
         <div className="first-section">
           <motion.h1
+            ref={ref}
             whileInView={{
               x: [100, 0],
               opacity: [0, 1],
               transition: { duration: 0.5 },
             }}
+            viewport={{ once: true }}
             className="section-heading"
           >
             Try Something New !
@@ -78,12 +90,14 @@ function Home() {
         </div>
         <div className="content-container">
           <motion.div
+            ref={ref}
             className="content"
             whileInView={{
               x: [-100, 0],
               opacity: [0, 0.5, 1],
               transition: { delay: 1 },
             }}
+            viewport={{ once: true }}
           >
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae
             voluptatum quod ullam culpa sit fugiat ea facere quibusdam impedit
@@ -96,6 +110,7 @@ function Home() {
           </motion.div>
           <div className="content-img">
             <motion.img
+              ref={ref}
               src="https://cdn.dribbble.com/userupload/21292774/file/original-14d7feebe36c9c9e5ef5f720b9d31791.gif"
               alt=""
               whileInView={{
@@ -103,6 +118,7 @@ function Home() {
                 opacity: [0, 1],
                 transition: { delay: 0.5 },
               }}
+              viewport={{ once: true }}
             />
           </div>
         </div>
@@ -110,23 +126,27 @@ function Home() {
 
       <section className="section-two">
         <motion.h1
+          ref={ref}
           whileInView={{
             x: [100, 0],
             opacity: [0, 1],
             transition: { duration: 0.5 },
           }}
+          viewport={{ once: true }}
           className="section-heading"
         >
           Minimalism in Action
         </motion.h1>
 
         <motion.div
+          ref={ref}
           className="cards-container"
           whileInView={{
             transition: { delay: 0.5 },
             opacity: [0, 1],
             delay: 1,
           }}
+          viewport={{ once: true }}
         >
           <Cards
             icon={
@@ -168,9 +188,9 @@ function Home() {
                   color: "green",
                   fontSize: "10vh",
                   cursor: "pointer",
-                  position:"relative",
-                  left:"15vh",
-                  top:"20px",
+                  position: "relative",
+                  left: "15vh",
+                  top: "20px",
                   padding: "10px",
                 }}
               />
@@ -182,25 +202,31 @@ function Home() {
 
       <section className="section-three">
         <motion.h1
+          ref={ref}
           whileInView={{
             x: [100, 0],
             opacity: [0, 1],
             transition: { duration: 0.5 },
           }}
+          viewport={{ once: true }}
           className="section-heading"
         >
           Our Developers
         </motion.h1>
         <motion.div
+          ref={ref}
           className="dev-container"
           whileInView={{ transition: { delay: 0.5 }, y: [0, 1] }}
+          viewport={{ once: true }}
         >
           <motion.div
+          ref={ref}
             whileInView={{
               transition: { delay: 0.5, duration: 0.5 },
               x: [200, 0],
               opacity: [0, 1],
             }}
+            viewport={{once:true}}
           >
             <DevCards
               img="https://cdn3.iconfinder.com/data/icons/business-avatar-1/512/11_avatar-512.png"

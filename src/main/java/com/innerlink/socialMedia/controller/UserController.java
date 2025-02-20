@@ -35,10 +35,7 @@ public class UserController {
        Authentication authenticationManager= SecurityContextHolder.getContext().getAuthentication();
        String username=authenticationManager.getName();
         Optional<User> user= Optional.ofNullable(userServices.UserById(username));
-        if(user.isPresent()){
-            return new ResponseEntity<>(user.get(), HttpStatus.OK);
-        }
-        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+       return user.map(value -> new ResponseEntity<>(value, HttpStatus.OK)).orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
    }
    @CrossOrigin
    @DeleteMapping

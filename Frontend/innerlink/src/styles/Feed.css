@@ -10,8 +10,11 @@
 }
 .full-container {
   z-index: -1;
-  background-image: url("https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Zm9yZXN0JTIwYmFja2dyb3VuZHxlbnwwfHwwfHx8MA%3D%3D");
-  background-size: cover;
+  background-image: url("https://i.postimg.cc/FzB5zV1L/Untitled-design.png");
+  background-size: contain;
+  
+  
+
 }
 
 .sidebar {
@@ -32,11 +35,11 @@
   grid-area: body;
   min-height: 100vh;
   border: 1px solid black;
-  background: rgba(255, 255, 255, 0.45);
+  /* background: rgba(255, 255, 255, 0.45);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.18); */
 }
 .item-container h2 {
   position: relative;
@@ -95,13 +98,26 @@
 .postCard {
   padding: 20px;
   width: 50vh;
-  height: 50vh;
+  height: 60vh;
   border-radius: 54px;
   background: #f4f7f3;
-  box-shadow: 44px 44px 40px #848c82, -44px -44px 40px #ffffff;
+  
+  
+    transition: transform 0.3s ease-in-out;
+
+
+
   position: relative; 
   overflow: hidden; 
+  border-right: 15px solid #c1bbbb;
+  border-left: 5px solid #abaaaa;
+  border-top: 5px solid #7c7878;
+  border-bottom: 15px solid #6b6868;
 }
+.postCard:hover {
+    transform: scale(1.05);
+}
+
 
 .postCard-img {
   padding: 20px;

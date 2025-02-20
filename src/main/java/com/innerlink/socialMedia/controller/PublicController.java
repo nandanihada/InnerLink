@@ -25,37 +25,39 @@ public class PublicController {
     private UserServices userServices;
     @Autowired
     private PostServices postServices;
+
     @CrossOrigin
     @PostMapping("/user")
-    public ResponseEntity <User> addUser(@RequestBody User user){//json ko body me bhejna hai
-        try{
+    public ResponseEntity<User> addUser(@RequestBody User user) {//json ko body me bhejna hai
+        try {
             userServices.saveNewUser(user);
-            return new ResponseEntity<>(user,HttpStatus.CREATED);
-        }
-        catch (Exception e){
-            return new ResponseEntity<>(user,HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>(user, HttpStatus.CREATED);
+        } catch (Exception e) {
+            return new ResponseEntity<>(user, HttpStatus.BAD_REQUEST);
         }
 
+
     }
+
     @CrossOrigin
     @GetMapping("/all")
-    public ResponseEntity<?>getAllPost(){
-       try{
-           List<PostEntries>list=postServices.getPost();
-           return new ResponseEntity<>(list,HttpStatus.OK);
-       }
-       catch (Exception e){
-           return new ResponseEntity<>("Something Went Wrong !",HttpStatus.BAD_GATEWAY);
-       }
+    public ResponseEntity<?> getAllPost() {
+        try {
+            List<PostEntries> list = postServices.getPost();
+            return new ResponseEntity<>(list, HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>("Something Went Wrong !", HttpStatus.BAD_GATEWAY);
+        }
     }
-@CrossOrigin
+
+    @CrossOrigin
     @GetMapping("/verify")
-    public ResponseEntity<?> Verification(){
-        Authentication authentication= SecurityContextHolder.getContext().getAuthentication();
-        String name= authentication.getName();
-        User user =userRepo.findByUsername(name);
-        if(user!=null){
-            return new ResponseEntity<>("verified",HttpStatus.OK);
+    public ResponseEntity<?> Verification() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String name = authentication.getName();
+        User user = userRepo.findByUsername(name);
+        if (user != null) {
+            return new ResponseEntity<>("verified", HttpStatus.OK);
         }
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
