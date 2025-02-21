@@ -11,34 +11,114 @@ import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
 function Feed() {
   const [getPost, setPost] = React.useState([]);
+  const [newComment, setNewComment] = React.useState("");
+  const [getLike, setLike] = React.useState(0);
+
+  const handleAddComment = async (postId) => {
+    if (!newComment.trim()) return; // Prevent empty comments
+
+    try {
+      const authToken = localStorage.getItem("authToken");
+      const response = await fetch(
+        `http://localhost:8080/post/comment/${postId}`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: "Basic " + authToken,
+          },
+          body: JSON.stringify({ comment: newComment }),
+        }
+      );
+
+      if (response.ok) {
+        const updatedPost = getPost.map((post) => {
+          if (post.postid === postId) {
+            return {
+              ...post,
+              comments: [...post.comments, newComment],
+            };
+          }
+          return post;
+        });
+
+        setPost(updatedPost);
+        setNewComment("");
+      } else {
+        alert("Failed to add comment");
+      }
+    } catch (err) {
+      console.error(err);
+    }
+  };
 
   const handleLikes = async (postId) => {
     try {
       const authToken = localStorage.getItem("authToken");
+      setPost((prevPosts) =>
+        prevPosts.map((post) => {
+          if (post.postid === postId) {
+            const hasLiked = post.likedBy?.includes(
+              localStorage.getItem("username")
+            );
+            return {
+              ...post,
+              likes: hasLiked ? post.likes - 1 : post.likes + 1,
+              likedBy: hasLiked
+                ? post.likedBy.filter(
+                    (user) => user !== localStorage.getItem("username")
+                  )
+                : [...(post.likedBy || []), localStorage.getItem("username")],
+            };
+          }
+          return post;
+        })
+      );
       const response = await fetch(
         `http://localhost:8080/post/likes/${postId}`,
         {
+          method: "POST",
           headers: {
-            method: "POST",
+            "Content-Type": "application/json",
             Authorization: "Basic " + authToken,
           },
         }
       );
-      if (response.ok) {
-        window.reload();
-      } else {
-        alert("Unable to Fetch the Post");
+
+      if (!response.ok) {
+        setPost((prevPosts) =>
+          prevPosts.map((post) => {
+            if (post.postid === postId) {
+              const hasLiked = post.likedBy?.includes(
+                localStorage.getItem("username")
+              );
+              return {
+                ...post,
+                likes: hasLiked ? post.likes + 1 : post.likes - 1,
+                likedBy: hasLiked
+                  ? [...(post.likedBy || []), localStorage.getItem("username")]
+                  : post.likedBy.filter(
+                      (user) => user !== localStorage.getItem("username")
+                    ),
+              };
+            }
+            return post;
+          })
+        );
+        alert("Failed to update like status");
       }
     } catch (err) {
-      console.log(err);
+      console.error(err);
     }
   };
+
   const getPostData = async () => {
     try {
       const authToken = localStorage.getItem("authToken");
       const response = await fetch("http://localhost:8080/get/all", {
         headers: {
           method: "GET",
+          Authorization: "Basic " + authToken,
         },
       });
       if (response.status === 200) {
@@ -63,7 +143,7 @@ function Feed() {
   };
   return (
     <>
-      <div className="full-container">
+      <motion.div className="full-container" whileInView={{backgroundPositionY:["120%","100%"]}}>
         {/* <PersistentDrawerLeft/> */}
         <div className="feed-heading-container">
           <h1 className="feed-heading">
@@ -160,7 +240,7 @@ function Feed() {
                     <div className="postCard-stat-container">
                       <motion.button
                         className="btn-like"
-                        onClick={handleLikes}
+                        onClick={() => handleLikes(post.postid)}
                         whileHover={{
                           scale: 1.1,
                           backgroundColor: "rgb(230, 42, 236)",
@@ -194,6 +274,8 @@ function Feed() {
                       <textarea
                         className="add-comment"
                         placeholder=" Add a comment..."
+                        value={newComment}
+                        onChange={(e) => setNewComment(e.target.value)}
                       />
                     </div>
                     <motion.button
@@ -202,6 +284,7 @@ function Feed() {
                       animate={{ x: [0, 100, -20], opacity: [1, 0, 1] }}
                       transition={{ ease: "easeInOut", duration: 3 }}
                       exit={{ x: 0 }}
+                      onClick={() => handleAddComment(post.postid, newComment)}
                     >
                       <span className="postCard-comments">
                         <ArrowForwardIcon
@@ -230,7 +313,7 @@ function Feed() {
             )}
           </div>
         </section>
-      </div>
+      </motion.div>
     </>
   );
 }

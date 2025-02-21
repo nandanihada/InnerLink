@@ -10,10 +10,13 @@
 }
 .full-container {
   z-index: -1;
-  /* background-color: #D99D81; */
-  background-image: url("https://i.postimg.cc/FzB5zV1L/Untitled-design.png");
-  /* background-size: contain; */
+  background-color: white;
+  background-image: url("https://thumbs.dreamstime.com/b/vector-seamless-green-misty-coniferous-forest-pattern-isolated-white-background-140690330.jpg");
+  background-attachment: fixed;
+  background-repeat:repeat-x;
+  background-position-y: 100%;
 }
+
 
 .sidebar {
   grid-area: sidebar;
@@ -86,7 +89,6 @@
   top: 30vh;
 }
 .post-container {
-  border: 1px solid rgb(255, 0, 0);
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -98,9 +100,9 @@
   padding: 20px;
   /* min-width: 60vh;
   min-height: 70vh; */
- max-width: 55vh;
- height: auto;
-  background: rgba(178, 241, 141, 0.25);
+  max-width: 55vh;
+  height: auto;
+  background: rgba(89, 223, 55, 0.25);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
@@ -135,27 +137,15 @@
   font-size: 2.5vh;
   font-family: "Belanosima", serif;
 }
-
-.postCard::before {
-  content: "";
-  position: absolute;
-  width: 40px;
-  height: 40px;
-  background: url("https://www.svgrepo.com/show/503725/leaves.svg") no-repeat
-    center;
-  background-size: contain;
-  opacity: 0.9;
-  pointer-events: none;
-}
 .comment {
   font-size: 2vh;
   font-family: "Belanosima", serif;
   padding: 0.02px;
 }
-.add-comment-container{
+.add-comment-container {
   padding: 20px;
 }
-.add-comment{
+.add-comment {
   /* padding: 20px; */
   width: 50vh;
   position: relative;
@@ -172,19 +162,20 @@
   top: 10px;
   left: 10px;
 }
-.comment-list{
+.comment-list {
   list-style-type: none;
 }
 .btn-like {
   padding: 10px;
-  width: 20vh;
-  border-radius: 20px;
+  width: 10vh;
+  border-radius: 100px;
   font-size: 20px;
   position: relative;
   top: -15%;
   color: rgb(230, 42, 236);
   font-family: "Belanosima", serif;
-  border: 5px dotted rgb(230, 42, 236);
+  border: none;
+  outline: none;
   background-color: transparent;
 }
 .postCard-title {
@@ -210,26 +201,22 @@
   gap: 20%;
   justify-content: center;
 }
-.btn-comment{
-  padding: 20px;
-  width: 10vh;
-  border-radius: 50%;
+.btn-comment {
+  padding: 10px;
+  width: 15vh;
+  border-radius: 20px;
   font-size: 20px;
   position: relative;
-  left: 45%;
-  color: #77B254;
+  left: 40%;
+  color: #77b254;
   font-family: "Belanosima", serif;
-  border: 5px dotted #77B254;
+  border: 5px dotted #77b254;
   background-color: transparent;
   transition: all 1s ease;
 }
-.btn-comment:hover{
-  background-color:#77B254 ;
-  color: white;
-  border: 5px dotted #77B254;
-  padding: 20px;
+.btn-comment:hover {
 }
-.arrow-icon{
+.arrow-icon {
   position: relative;
   top: 14%;
   left: 3%;

@@ -65,14 +65,15 @@ public class PostServices {
             String username = auth.getName();
             PostEntries post = postRepo.findBypostid(postid);
             if (post != null) {
-                int likes = post.getLikes();
-                post.setLikes(likes + 1);
                 if (post.getLikedBy() == null) {
                     post.setLikedBy(new ArrayList<>());
                 }
+                int likes = post.getLikes();
                 if (post.getLikedBy().contains(username)) {
-                    throw new RuntimeException("Username Already Exists");
+                    post.setLikes(likes - 1);
+                    post.getLikedBy().remove(username);
                 } else {
+                    post.setLikes(likes + 1);
                     post.getLikedBy().add(username);
                 }
                 postRepo.save(post);
