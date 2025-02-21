@@ -7,10 +7,7 @@ import SecurityIcon from "@mui/icons-material/Security";
 import ThumbUpAltIcon from "@mui/icons-material/ThumbUpAlt";
 import DevCards from "../component/DevCards";
 import Footer from "../component/Footer";
-import {
-  motion,
-  useInView
-} from "motion/react";
+import { motion, useInView } from "motion/react";
 import { useNavigate } from "react-router-dom";
 function Home() {
   // const { scrollYProgress } = useScroll();
@@ -33,12 +30,34 @@ function Home() {
           viewport={{ once: true }}
         >
           <div className="heading-container" ref={ref}>
-            <h1 className="first-heading">INNER</h1>
-            <h1 className="second-heading">LINK</h1>
+            <motion.h1
+              className="first-heading"
+              whileInView={{ letterSpacing: ["20px", "0px"] }}
+              transition={{ duration: 0.5, delay: 0.5 }}
+              ref={ref}
+              viewport={{ once: true }}
+            >
+              INNER
+            </motion.h1>
+            <motion.h1
+              className="second-heading"
+              whileInView={{ letterSpacing: ["0px", "20px"] }}
+              transition={{ duration: 0.5, delay: 0.5 }}
+              ref={ref}
+              viewport={{ once: true }}
+            >
+              LINK
+            </motion.h1>
           </div>
-          <h6 className="sub-heading">
+          <motion.h6
+            className="sub-heading"
+            whileInView={{ opacity: [0, 1] }}
+            transition={{ duration: 0.5, delay: 1 }}
+            ref={ref}
+            viewport={{ once: true }}
+          >
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, eum.
-          </h6>
+          </motion.h6>
           <motion.button
             className="btn-get-started"
             whileTap={{ scale: 0.9 }}
@@ -220,13 +239,13 @@ function Home() {
           viewport={{ once: true }}
         >
           <motion.div
-          ref={ref}
+            ref={ref}
             whileInView={{
               transition: { delay: 0.5, duration: 0.5 },
               x: [200, 0],
               opacity: [0, 1],
             }}
-            viewport={{once:true}}
+            viewport={{ once: true }}
           >
             <DevCards
               img="https://cdn3.iconfinder.com/data/icons/business-avatar-1/512/11_avatar-512.png"

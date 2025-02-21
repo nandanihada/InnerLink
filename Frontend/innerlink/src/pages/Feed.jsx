@@ -6,7 +6,7 @@ import LogoutIcon from "@mui/icons-material/Logout";
 import DynamicFeedIcon from "@mui/icons-material/DynamicFeed";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import CommentIcon from "@mui/icons-material/Comment";
-import AddIcon from '@mui/icons-material/Add';
+import AddIcon from "@mui/icons-material/Add";
 import { motion, useInView } from "framer-motion";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
@@ -172,23 +172,6 @@ function Feed() {
             ref={ref}
           >
             <div className="item-main-container">
-              <div className="item1">
-                <div className="item-container">
-                  <img src="" alt="" />
-                  <FaceIcon
-                    sx={{
-                      fontSize: "7vh",
-                      color: "black",
-                      cursor: "pointer",
-                      borderRadius: "50%",
-                      padding: "20px",
-                      transition: "all 1s ease",
-                      "&:hover": { backgroundColor: "green", color: "white" },
-                    }}
-                  />
-                  <h2>Profile</h2>
-                </div>
-              </div>
               <div className="item2">
                 <div className="item-container">
                   <img src="" alt="" />
