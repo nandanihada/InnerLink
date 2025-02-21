@@ -6,6 +6,7 @@ import LogoutIcon from "@mui/icons-material/Logout";
 import DynamicFeedIcon from "@mui/icons-material/DynamicFeed";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import CommentIcon from "@mui/icons-material/Comment";
+import AddIcon from '@mui/icons-material/Add';
 import { motion, useInView } from "framer-motion";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
@@ -208,7 +209,7 @@ function Feed() {
               <div className="item3">
                 <div className="item-container">
                   <img src="" alt="" />
-                  <DynamicFeedIcon
+                  <AddIcon
                     sx={{
                       fontSize: "7vh",
                       color: "black",
@@ -219,7 +220,7 @@ function Feed() {
                       "&:hover": { backgroundColor: "green", color: "white" },
                     }}
                   />
-                  <h2>Feed</h2>
+                  <h2>New Post</h2>
                 </div>
               </div>
               <div className="item4">
