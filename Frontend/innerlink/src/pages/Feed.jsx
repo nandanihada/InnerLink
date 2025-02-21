@@ -6,10 +6,12 @@ import LogoutIcon from "@mui/icons-material/Logout";
 import DynamicFeedIcon from "@mui/icons-material/DynamicFeed";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import CommentIcon from "@mui/icons-material/Comment";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
 function Feed() {
+  const ref = React.useRef(null);
+  const isInView = useInView(ref, { once: true });
   const [getPost, setPost] = React.useState([]);
   const [newComment, setNewComment] = React.useState("");
   const [getLike, setLike] = React.useState(0);
@@ -92,6 +94,7 @@ function Feed() {
               const hasLiked = post.likedBy?.includes(
                 localStorage.getItem("username")
               );
+
               return {
                 ...post,
                 likes: hasLiked ? post.likes + 1 : post.likes - 1,
@@ -143,15 +146,30 @@ function Feed() {
   };
   return (
     <>
-      <motion.div className="full-container" whileInView={{backgroundPositionY:["120%","100%"]}}>
+      <motion.div
+        className="full-container"
+        whileInView={{ backgroundPositionY: ["120%", "100%"] }}
+        transition={{ duration: 1, ease: "easeInOut" }}
+      >
         {/* <PersistentDrawerLeft/> */}
-        <div className="feed-heading-container">
+        <motion.div
+          className="feed-heading-container"
+          whileInView={{ y: [-100, 0], opacity: [0, 1] }}
+          transition={{ duration: 0.5, delay: 1 }}
+          ref={ref}
+          viewport={{ once: true }}
+        >
           <h1 className="feed-heading">
             Hey {localStorage.getItem("username")}, Here is your Feed
           </h1>
-        </div>
+        </motion.div>
         <section className="layout">
-          <div className="sidebar">
+          <motion.div
+            className="sidebar"
+            whileInView={{ x: [-100, 0], opacity: [0, 1] }}
+            transition={{ duration: 0.5, delay: 1 }}
+            ref={ref}
+          >
             <div className="item-main-container">
               <div className="item1">
                 <div className="item-container">
@@ -223,8 +241,12 @@ function Feed() {
                 </div>
               </div>
             </div>
-          </div>
-          <div className="body">
+          </motion.div>
+          <motion.div
+            className="body"
+            whileInView={{ opacity: [0, 1] }}
+            transition={{ duration: 0.5, delay: 2 }}
+          >
             {getPost.length > 0 ? (
               <div className="post-container">
                 {getPost.map((post) => (
@@ -254,7 +276,9 @@ function Feed() {
                     </div>
 
                     <p className="postCard-caption">
-                      <span>{post.postedby}</span>
+                      <span className="postCard-postedBy">
+                        {post.postedby + " : "}
+                      </span>
                       {post.caption}
                     </p>
                     <div className="comments-container">
@@ -280,10 +304,8 @@ function Feed() {
                     </div>
                     <motion.button
                       className="btn-comment"
-                      initial={{ x: 0 }}
-                      animate={{ x: [0, 100, -20], opacity: [1, 0, 1] }}
-                      transition={{ ease: "easeInOut", duration: 3 }}
-                      exit={{ x: 0 }}
+                      whileTap={{ scale: 0.9 }}
+                      whileHover={{ scale: 1.1, backgroundColor: "green" }}
                       onClick={() => handleAddComment(post.postid, newComment)}
                     >
                       <span className="postCard-comments">
@@ -311,7 +333,7 @@ function Feed() {
                 </div>
               </div>
             )}
-          </div>
+          </motion.div>
         </section>
       </motion.div>
     </>

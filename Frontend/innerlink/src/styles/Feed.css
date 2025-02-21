@@ -13,10 +13,9 @@
   background-color: white;
   background-image: url("https://thumbs.dreamstime.com/b/vector-seamless-green-misty-coniferous-forest-pattern-isolated-white-background-140690330.jpg");
   background-attachment: fixed;
-  background-repeat:repeat-x;
+  background-repeat: repeat-x;
   background-position-y: 100%;
 }
-
 
 .sidebar {
   grid-area: sidebar;
@@ -31,11 +30,13 @@
   width: auto;
   position: fixed;
   top: 5%;
+  box-shadow: 0 8px 32px 0 rgba(24, 96, 2, 0.591);
+  -webkit-box-shadow: 0 8px 32px 0 rgba(24, 96, 2, 0.591);
 }
 .body {
   grid-area: body;
   min-height: 100vh;
-  border: 1px solid black;
+  /* border: 1px solid bslack; */
   background-color: transparent;
   /* background: rgba(255, 255, 255, 0.45);
   backdrop-filter: blur(10px);
@@ -102,21 +103,20 @@
   min-height: 70vh; */
   max-width: 55vh;
   height: auto;
-  background: rgba(89, 223, 55, 0.25);
+  background: rgba(255, 255, 255, 0.25);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
   border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
 
   transition: transform 0.3s ease-in-out;
 
   position: relative;
   overflow: hidden;
-  border-right: 15px solid #77b254;
-  border-left: 5px solid #77b254;
-  border-top: 5px solid #77b254;
-  border-bottom: 15px solid #77b254;
+  border-right: 15px solid rgb(201, 238, 180);
+  border-left: 5px solid rgb(201, 238, 180);
+  border-top: 5px solid rgb(201, 238, 180);
+  border-bottom: 15px solid rgb(201, 238, 180);
 }
 
 .postCard-img {
@@ -135,6 +135,7 @@
 
 .postCard-caption {
   font-size: 2.5vh;
+  color: rgb(2, 54, 2);
   font-family: "Belanosima", serif;
 }
 .comment {
@@ -164,6 +165,7 @@
 }
 .comment-list {
   list-style-type: none;
+  color: rgb(2, 54, 2);
 }
 .btn-like {
   padding: 10px;
@@ -182,7 +184,7 @@
   text-align: center;
   font-size: 5vh;
   font-family: "Luckiest Guy", serif;
-  color: #f34d00;
+  color: rgb(2, 54, 2);
   letter-spacing: 2px;
   text-transform: uppercase;
 }
@@ -203,18 +205,18 @@
 }
 .btn-comment {
   padding: 10px;
-  width: 15vh;
-  border-radius: 20px;
-  font-size: 20px;
-  position: relative;
-  left: 40%;
-  color: #77b254;
-  font-family: "Belanosima", serif;
-  border: 5px dotted #77b254;
-  background-color: transparent;
-  transition: all 1s ease;
+  width: 10vh;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 30px;
+  background-color: #4d9722;
+  color: white;
+  border: none;
 }
-.btn-comment:hover {
+.postCard-postedBy{
+  font-size: 3vh;
+  text-transform: capitalize;
 }
 .arrow-icon {
   position: relative;
