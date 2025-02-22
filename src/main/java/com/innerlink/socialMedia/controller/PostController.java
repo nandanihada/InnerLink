@@ -44,6 +44,7 @@ public class PostController {
         String uid = UUID.randomUUID().toString();
         clone.setPostid(uid);
         clone.setPrivate(false);
+        clone.setPostImage(postEntries.getPostImage());
         clone.setTitle(postEntries.getTitle());
         clone.setCaption(postEntries.getCaption());
         postServices.postEntries(clone, username);

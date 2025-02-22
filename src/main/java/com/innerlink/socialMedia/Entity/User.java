@@ -28,6 +28,7 @@ public class User {
     @DBRef
     private List<PostEntries> postEntries = new ArrayList<>();
     private List<String> roles;
+    private String userImg;
 
     public String getEmail() {
         return email;
