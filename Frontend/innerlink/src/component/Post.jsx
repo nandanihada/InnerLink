@@ -1,12 +1,12 @@
 import React from 'react'
 import "../styles/post.css";
-function post() {
+function Post() {
   return (
     <>
-      
+      <h1>New Post Add</h1>
 
     </>
   )
 }
 
-export default post
+export default Post;
