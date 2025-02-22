@@ -7,11 +7,14 @@ import DynamicFeedIcon from "@mui/icons-material/DynamicFeed";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import CommentIcon from "@mui/icons-material/Comment";
 import AddIcon from "@mui/icons-material/Add";
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, useScroll } from "framer-motion";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import { Menu } from "@mui/material";
+import AccountMenu from "../component/AccountMenu";
 
 function Feed() {
   const ref = React.useRef(null);
+  const { scrollYProgress } = useScroll();
   const isInView = useInView(ref, { once: true });
   const [getPost, setPost] = React.useState([]);
   const [newComment, setNewComment] = React.useState("");
@@ -149,9 +152,14 @@ function Feed() {
     <>
       <motion.div
         className="full-container"
-        whileInView={{ backgroundPositionY: ["120%", "100%"] }}
+        whileInView={{ backgroundPositionY: ["120%", "100%"], opacity: [0, 1] }}
         transition={{ duration: 1, ease: "easeInOut" }}
       >
+        <motion.div
+          className="bird-container"
+          whileInView={{ x: [100, 0], opacity: [0, 1] }}
+          transition={{ duration: 1, ease: "easeInOut", delay: 0.5 }}
+        ></motion.div>
         {/* <PersistentDrawerLeft/> */}
         <motion.div
           className="feed-heading-container"
@@ -163,6 +171,11 @@ function Feed() {
           <h1 className="feed-heading">
             Hey {localStorage.getItem("username")}, Here is your Feed
           </h1>
+          <div className="menu-container">
+            <button className="profile">
+              {localStorage.getItem("username").charAt(0).toUpperCase()}
+            </button>
+          </div>
         </motion.div>
         <section className="layout">
           <motion.div

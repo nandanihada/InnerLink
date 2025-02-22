@@ -36,7 +36,7 @@ function Signup() {
         localStorage.setItem("username", formData.username);
         localStorage.setItem("email", formData.email);
         alert("User Added");
-        navigate("/feed");
+        navigate("/login");
       } else {
         console.log("Unexpected response:", response);
         alert("Something went Wrong");

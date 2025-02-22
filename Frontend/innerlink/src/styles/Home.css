@@ -70,7 +70,7 @@ section {
   gap: 10%;
 }
 .content {
-  font-size: 3.5vh;
+  font-size: 3vh;
   font-family: "Sulphur Point", serif;
   color: rgb(0, 0, 0);
   font-weight: 700;
@@ -86,7 +86,7 @@ section {
 .content-img img {
   width: 70vh;
   height: 50vh;
-  border-radius: 100px;
+  border-radius: 30px;
   position: relative;
   top: 10%;
 }

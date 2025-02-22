@@ -16,8 +16,20 @@
   background-repeat: repeat-x;
   background-position-y: 100%;
 }
+.bird-container {
+  z-index: 1;
+  height: 100vh;
+  position: fixed;
+  width: 50%;
+  background-size: 20%;
+  background-repeat: no-repeat;
+  background-position-x: 40%;
+  background-position-y: 40%;
+  background-image: url("https://www.svgheart.com/wp-content/uploads/2020/05/flying-birds-free-svg-file.png");
+}
 
 .sidebar {
+  z-index: 999;
   grid-area: sidebar;
   height: auto;
   border: 1px solid black;
@@ -35,6 +47,8 @@
 }
 .body {
   grid-area: body;
+  z-index: 999;
+
   min-height: 100vh;
   background-color: transparent;
 }
@@ -67,10 +81,38 @@
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   padding: 30px;
-  width: 110vh;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+  width: fit-content;
+  display: flex;
+  flex-direction: row;
+  gap: 10%;
+  justify-content: right;
+  align-items: center;
+  align-content: center;
+  position: relative;
+  left: 15%;
+}
+.profile {
+  padding: 30px;
+  width: 11vh;
+  border: none;
+  font-size: 4vh;
+  border-radius: 900px;
+  background-color: rgb(201, 238, 180, 0.5);
+  box-shadow: 0 8px 32px 0 rgba(2, 70, 2, 0.37);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  cursor: pointer;
+  position: relative;
+  right: 50%;
+  font-size: 3vh;
+  font-family: "Belanosima", serif;
+  color: darkgreen;
+  font-weight: 600;
+}
+.profile-line{
+  transform: rotate(90deg);
+  position: relative;
+  color: rgb(201, 238, 180);
 }
 .coming-soon {
   text-align: center;
@@ -176,7 +218,7 @@
   text-align: center;
   font-size: 5vh;
   font-family: "Luckiest Guy", serif;
-  color: rgb(2, 54, 2);
+  color: rgb(12, 143, 12);
   letter-spacing: 2px;
   text-transform: uppercase;
 }
@@ -206,7 +248,7 @@
   color: white;
   border: none;
 }
-.postCard-postedBy{
+.postCard-postedBy {
   font-size: 3vh;
   text-transform: capitalize;
 }
