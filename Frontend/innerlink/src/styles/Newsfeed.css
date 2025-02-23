@@ -1,56 +1,41 @@
-/* Headin Section */
 .headin {
   display: flex;
   justify-content: center;
-  align-items: center; /* To center the image and text vertically */
-  font-size: 3vh;
+  align-items: center;
+  font-size: clamp(2rem, 6vw, 4rem);
   font-family: "Belanosima", serif;
   font-weight: 600;
-  margin-top: 6vh;
+  margin: 2rem 0;
   color: #333;
+  gap: 1.5rem;
   transition: transform 0.4s ease, color 0.4s ease, letter-spacing 0.4s ease;
-  gap: 20px; /* Slight increase in gap between the image and text */
 }
 
 .headin:hover {
-  transform: scale(1.1) rotate(2deg);
+  transform: scale(1.05) rotate(1deg);
   color: #0c8929;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
 }
 
 .img {
-  width: 20vh;
-  height: 20vh;
-  object-fit: cover; /* Ensures the image aspect ratio remains intact */
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
 }
 
-/* Newsfeed Section */
-.together {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
-  gap: 20px; /* Space between columns */
-  row-gap: 60px; /* Vertical space between rows */
-  padding: 20px;
-  width: 100%; /* Ensure it takes up full width */
-  box-sizing: border-box;
-}
-
-/* Individual Cards */
-.card1 {
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  transition: transform 0.3s ease-in-out;
-}
-
-.card1:hover {
-  transform: scale(1.05); /* Card hover effect */
-}
-
-/* Optional - Adjusting the Card Image Size */
-.card__hero1 img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px; /* Make sure image has rounded corners if you want */
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .together {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+  
+  .card1 {
+    min-height: 350px;
+  }
+  
+  .headin {
+    flex-direction: column;
+    text-align: center;
+  }
 }

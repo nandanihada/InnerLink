@@ -1,92 +1,115 @@
-.card1 {
-  margin: auto;
-  width: 100%; /* Make the card width responsive */
-  max-width: 350px; /* Set a maximum width to prevent cards from growing too large */
-  height: auto; /* Let the card height adjust based on content */
-  background-color: #fefefe;
-  border-radius: 1rem;
-  padding: 0.5rem;
-  color: #141417;
-  transform: rotate(0deg); /* Ensure the card is not rotated */
-  box-sizing: border-box; /* Include padding and border in element's total size */
+.together {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
+/* Card Styles */
+.card1 {
+  width: 100%;
+  min-height: 400px;
+  background-color: #fefefe;
+  border-radius: 1rem;
+  padding: 1rem;
+  color: #141417;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+  transform: rotate(0); /* Ensure cards are straight */
+}
+
+.card1:hover {
+  transform: translateY(-8px) scale(1.02); /* Added scale for a subtle zoom effect */
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+/* Card Hero Section */
 .card__hero1 {
   background-color: #71c679;
   border-radius: 0.5rem 0.5rem 0 0;
   padding: 1.5rem;
-  font-size: 0.875rem;
+  text-align: center;
+  margin: -1rem -1rem 1rem -1rem;
+}
+
+.card__hero1 img {
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  display: block;
 }
 
 .card__hero1 .card__job-title1 {
-  margin: 2rem 0;
-  font-size: 2rem;
-  font-weight: 600;
-  padding-right: 2rem;
+  margin: 1rem 0;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #141417;
+  font-family: "Belanosima", serif;
+  text-align: center;
 }
 
+/* Card Header */
 .card__hero-header1 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-direction: row;
-  flex-wrap: nowrap;
   gap: 1rem;
   font-weight: 700;
+  margin-bottom: 1rem;
 }
 
+/* Card Footer */
 .card__footer1 {
+  margin-top: auto;
+  padding: 1rem;
   display: flex;
-  justify-content: flex-start;
-  align-items: flex-start; /* Corrected from "start" to "flex-start" */
   flex-direction: column;
-  flex-wrap: nowrap;
-  padding: 0.75rem;
-  row-gap: 1rem;
-  font-weight: 700;
-  font-size: 0.875rem;
+  gap: 1rem;
 }
 
-@media (min-width: 340px) {
+@media (min-width: 768px) {
   .card__footer1 {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    gap: 1rem;
   }
 }
 
+/* Job Summary */
 .card__job-summary1 {
   display: flex;
-  justify-content: flex-start;
   align-items: center;
-  flex-direction: row;
-  flex-wrap: nowrap;
   gap: 0.75rem;
 }
 
+/* Button Styles */
 .card__btn1 {
   width: 100%;
-  font-weight: 400;
+  padding: 0.75rem 1.5rem;
   border: none;
-  display: block;
-  cursor: pointer;
-  text-align: center;
-  padding: 0.5rem 1.25rem;
-  border-radius: 1rem;
-  background-color: #141417;
+  background-color: #71c679;
   color: #fff;
-  font-size: 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-@media (min-width: 340px) {
-  .card__btn1 {
-    width: max-content;
-  }
+.card__btn1:hover {
+  background-color: #5aa862; /* Darker shade on hover */
 }
 
 .chuza {
-  margin-left: 50px;
-  height: 30vh;
-  width: 30vh;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display:block;
+  border-radius: 5%; /* Circular image */
 }

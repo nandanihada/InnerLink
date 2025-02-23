@@ -11,9 +11,12 @@ function App() {
   return (
     <Router>
       <Routes>
+        {/* Public Routes */}
         <Route path="/login" element={<Login />} />
         <Route path="/" element={<Home />} />
         <Route path="/signup" element={<Signup />} />
+
+        {/* Private Routes */}
         <Route
           path="/feed"
           element={
@@ -38,6 +41,8 @@ function App() {
             </PrivateRoute>
           }
         />
+
+       
       </Routes>
     </Router>
   );
