@@ -13,7 +13,7 @@ function Login() {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://192.168.1.116:8080/get/verify", {
+      const response = await fetch("https://innerlink.onrender.com/get/verify", {
         method: "GET",
         headers: {
           Authorization: "Basic " + btoa(username + ":" + password),

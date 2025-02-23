@@ -10,7 +10,7 @@ function Newsfeed() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("http://localhost:8080/get/news")
+    fetch("https://innerlink.onrender.com/news")
       .then((res) => res.json())
       .then((data) => setNews(data))
       .catch((err) => console.log("Error fetching news", err));

@@ -23,7 +23,7 @@ function Signup() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:8080/get/user", {
+      const response = await axios.post("https://innerlink.onrender.com/get/user", {
         username: formData.username,
         password: formData.password,
         email: formData.email,

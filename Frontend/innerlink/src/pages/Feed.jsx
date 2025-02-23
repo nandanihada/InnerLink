@@ -28,7 +28,7 @@ function Feed() {
     try {
       const authToken = localStorage.getItem("authToken");
       const response = await fetch(
-        `http://localhost:8080/post/comment/${postId}`,
+        `https://innerlink.onrender.com/post/comment/${postId}`,
         {
           method: "POST",
           headers: {
@@ -83,7 +83,7 @@ function Feed() {
         })
       );
       const response = await fetch(
-        `http://localhost:8080/post/likes/${postId}`,
+        `https://innerlink.onrender.com/post/likes/${postId}`,
         {
           method: "POST",
           headers: {
@@ -124,7 +124,7 @@ function Feed() {
   const getPostData = async () => {
     try {
       const authToken = localStorage.getItem("authToken");
-      const response = await fetch("http://localhost:8080/get/all", {
+      const response = await fetch("https://innerlink.onrender.com/get/all", {
         headers: {
           method: "GET",
           Authorization: `Basic ${authToken}`,

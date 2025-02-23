@@ -47,7 +47,7 @@ function Post() {
     }
 
     try {
-      const response = await fetch("http://localhost:8080/post/create-new", {
+      const response = await fetch("https://innerlink.onrender.com/post/create-new", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
