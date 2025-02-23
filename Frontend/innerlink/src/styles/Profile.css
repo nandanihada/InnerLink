@@ -1,0 +1,117 @@
+body {
+  overflow-x: hidden;
+}
+.profile-main-container {
+  background-image: url("https://static.vecteezy.com/system/resources/previews/006/140/168/non_2x/illustration-of-forest-landscape-vector.jpg");
+  background-position-y: 100%;
+  background-size: 100vh;
+  min-height: 100vh;
+  background-repeat: repeat-x;
+  background-color: rgb(231, 243, 243);
+}
+.profile-heading {
+  font-size: 8vh;
+  text-align: center;
+  font-family: "Luckiest Guy", serif;
+  letter-spacing: 3px;
+  color: darkgreen;
+  font-weight: 600;
+  word-spacing: 5px;
+  padding: 20px;
+}
+.profile-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10%;
+}
+.profile-img {
+  width: 20%;
+  border-radius: 200px;
+}
+
+.profile-content-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.profile-name {
+  font-size: 4vh;
+  font-family: "Luckiest Guy", serif;
+  font-weight: 800;
+  color: darkgreen;
+  text-align: center;
+}
+.profile-email {
+  font-size: 4vh;
+  font-weight: 800;
+  font-family: "Luckiest Guy", serif;
+  color: darkgreen;
+  text-align: center;
+}
+.profile-post {
+  font-size: 4vh;
+  font-weight: 800;
+  font-family: "Luckiest Guy", serif;
+  color: darkgreen;
+  text-align: center;
+}
+.profile-name-content {
+  font-size: 3vh;
+  font-weight: 800;
+  font-family: "Belanosima", serif;
+  color: rgb(1, 63, 1);
+  text-align: center;
+}
+.profile-buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 5%;
+  justify-content: right;
+  align-items: center;
+  position: relative;
+  right: 10%;
+  padding: 20px;
+}
+.btn-edit {
+  border-radius: 20px;
+  border: 4px dotted darkgreen;
+  padding: 10px;
+  background-color: transparent;
+  width: 25vh;
+  font-size: 2vh;
+  font-family: "Belanosima", serif;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: all 1 ease-in-out;
+}
+.btn-edit:focus {
+  transform: scale(1.1);
+  background-color: "green";
+  color: "white";
+  border: "none";
+}
+.btn-changePass {
+  border-radius: 20px;
+  border: 4px dotted darkgreen;
+  padding: 10px;
+  background-color: transparent;
+  width: 25vh;
+  font-size: 2vh;
+  font-family: "Belanosima", serif;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+.profile-about {
+  font-size: 3vh;
+  width: 50%;
+  font-family: "Belanosima", serif;
+  text-align: justify;
+  font-weight: 400;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
