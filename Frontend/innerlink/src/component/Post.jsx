@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../styles/post.css";
 import { motion } from "framer-motion";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { Button, Modal, Fade, Backdrop, Box, Typography } from "@mui/material";
+import { useNavigate } from "react-router-dom";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 
 function Post() {
   const [getPrivate, setPrivate] = useState(true);
@@ -16,6 +18,7 @@ function Post() {
     content: "",
     isPrivate: getPrivate,
   });
+  const navigate = useNavigate();
   const handleChange = (e) => {
     setPost({
       ...post,
@@ -66,6 +69,7 @@ function Post() {
       console.log(image);
       if (response.ok) {
         alert("Post Created Successfully");
+        navigate("/feed");
         handleClose();
       } else {
         alert(`Error: ${data.message || "Something went wrong"}`);
@@ -91,8 +95,28 @@ function Post() {
     }
   };
 
+
+
   return (
     <>
+      <ArrowBackIcon
+        sx={{
+          color: "black",
+          fontSize: "10vh",
+          cursor: "pointer",
+          position: "absolute",
+          left: "10px",
+          top: "50%",
+          borderRadius: "50%",
+          padding: "20px",
+          backgroundColor: "rgba(120, 224, 79, 0.45)",
+          backdropFilter: "blur(10px)",
+          WebkitBackdropFilter: "blur(10px)",
+        }}
+        onClick={() => {
+          navigate("/feed");
+        }}
+      />
       <div className="post-heading-container">
         <motion.h1 whileInView={{ x: [100, 0], opacity: [0, 1] }}>
           SHARE WITH THE WORLD !

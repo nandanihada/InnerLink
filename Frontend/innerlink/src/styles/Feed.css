@@ -41,6 +41,7 @@
   border: 1px solid rgba(255, 255, 255, 0.18);
   width: auto;
   position: fixed;
+  text-align: center;
   top: 15%;
   box-shadow: 0 8px 32px 0 rgba(24, 96, 2, 0.591);
   -webkit-box-shadow: 0 8px 32px 0 rgba(24, 96, 2, 0.591);
@@ -109,7 +110,7 @@
   color: darkgreen;
   font-weight: 600;
 }
-.profile-line{
+.profile-line {
   transform: rotate(90deg);
   position: relative;
   color: rgb(201, 238, 180);
@@ -155,7 +156,7 @@
 
 .postCard-img {
   padding: 20px;
-  height: 40vh;
+  max-height: 30vh;
   border-radius: 50px;
 }
 

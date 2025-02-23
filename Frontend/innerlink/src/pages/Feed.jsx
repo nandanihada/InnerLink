@@ -22,7 +22,6 @@ function Feed() {
   const [getLike, setLike] = React.useState(0);
 
   const navigate = useNavigate();
-
   const handleAddComment = async (postId) => {
     if (!newComment.trim()) return; // Prevent empty comments
 
@@ -175,9 +174,14 @@ function Feed() {
             Hey {localStorage.getItem("username")}, Here is your Feed
           </h1>
           <div className="menu-container">
-            <button className="profile">
+            <motion.button
+              className="profile"
+              whileHover={{ scale: 1.1, fontSize: "30px" }}
+              whileTap={{ scale: 0.9 }}
+              onClick={() => navigate("/profile")}
+            >
               {localStorage.getItem("username").charAt(0).toUpperCase()}
-            </button>
+            </motion.button>
           </div>
         </motion.div>
         <section className="layout">
@@ -201,6 +205,7 @@ function Feed() {
                       transition: "all 1s ease",
                       "&:hover": { backgroundColor: "green", color: "white" },
                     }}
+                    onClick={() => navigate("/newsfeed")}
                   />
                   <h2>News</h2>
                 </div>
@@ -249,9 +254,19 @@ function Feed() {
             transition={{ duration: 0.5, delay: 2 }}
           >
             {getPost.length > 0 ? (
-              <div className="post-container">
+              <motion.div
+                className="post-container"
+                whileInView={{ opacity: [0, 1] }}
+                viewport={{ once: true }}
+              >
                 {getPost.map((post) => (
-                  <div className="postCard" key={post.postid}>
+                  <motion.div
+                    className="postCard"
+                    key={post.postid}
+                    whileInView={{ opacity: [0, 1], scale: [0, 1] }}
+                    transition={{ duration: 0.1, delay: 0.3 }}
+                    viewport={{ once: true }}
+                  >
                     <h2 className="postCard-title">{post.title}</h2>
                     <div className="postCard-img-container">
                       <img
@@ -316,9 +331,9 @@ function Feed() {
                         />
                       </span>
                     </motion.button>
-                  </div>
+                  </motion.div>
                 ))}
-              </div>
+              </motion.div>
             ) : (
               <div className="post-container">
                 <div className="postCard">
