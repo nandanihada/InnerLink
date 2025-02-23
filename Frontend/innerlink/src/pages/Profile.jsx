@@ -3,12 +3,58 @@ import "../styles/Profile.css";
 import { motion, useInView } from "framer-motion";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { useNavigate } from "react-router-dom";
+import {
+  Dialog,
+  DialogTitle,
+  DialogContent,
+  DialogActions,
+  Button,
+  TextField,
+} from "@mui/material";
+import axios from "axios";
 
 function Profile() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true });
   const navigate = useNavigate();
   const [isActive, setActive] = useState("profile");
+  const [open, setOpen] = useState(false);
+  const [username, setUsername] = useState(
+    localStorage.getItem("username") || "User"
+  );
+  const [email, setEmail] = useState("something@gmail.com"); // Modal state
+
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
+  const handleUpdate = async (e) => {
+    e.preventDefault();
+    try {
+      const authToken=localStorage.getItem("authToken");
+      const response = await axios.put(
+        "http://localhost:8080/update/user",
+        {
+          username: username,
+          email: email,
+        },
+        {
+          headers: {
+            Authorization: `Basic ${authToken}`,
+          },
+        }
+      );
+      console.log(response);
+      if (response.status >= 200) {
+        alert("Profile Updated");
+        localStorage.setItem("username", username);
+      } else {
+        alert("Something went wrong");
+      }
+    } catch (err) {
+      console.log(err.response); // Log the full error response
+      alert("Something went wrong");
+    }
+  };
   return (
     <>
       <motion.div
@@ -125,17 +171,76 @@ function Profile() {
             whileInView={{ scale: [0, 1], opacity: [0, 1] }}
             transition={{ duration: 0.5, delay: 0.5 }}
           >
-            Edit Profile
+            Profile
           </motion.button>
           <motion.button
             className="btn-changePass"
             whileInView={{ scale: [0, 1], opacity: [0, 1] }}
             transition={{ duration: 0.5, delay: 0.5 }}
+            onClick={handleOpen}
           >
-            Change Password
+            Edit Profile
           </motion.button>
         </div>
       </motion.div>
+
+      <Dialog
+        open={open}
+        onClose={handleClose}
+        sx={{ borderRadius: "30px", padding: "20px" }}
+      >
+        <DialogTitle sx={{ fontSize: "3vh", fontFamily: "Belanosima, serif" }}>
+          Edit Profile
+        </DialogTitle>
+        <DialogContent>
+          <TextField
+            fullWidth
+            label="Name"
+            variant="outlined"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            sx={{ marginBottom: 2 }}
+          />
+          <TextField
+            fullWidth
+            label="Email"
+            variant="outlined"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            sx={{ marginBottom: 2, fontSize: "3vh" }}
+          />
+          {/* <TextField
+            fullWidth
+            label="Password"
+            variant="outlined"
+            type="password"
+          /> */}
+        </DialogContent>
+        <DialogActions>
+          <Button
+            onClick={handleClose}
+            sx={{
+              fontSize: "2vh",
+              fontFamily: "Belanosima, serif",
+              color: "green",
+            }}
+          >
+            Cancel
+          </Button>
+          <Button
+            variant="contained"
+            color="primary"
+            sx={{
+              fontSize: "2vh",
+              fontFamily: "Belanosima, serif",
+              backgroundColor: "green",
+            }}
+            onClick={handleUpdate}
+          >
+            Save
+          </Button>
+        </DialogActions>
+      </Dialog>
     </>
   );
 }

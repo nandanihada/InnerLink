@@ -127,7 +127,7 @@ function Feed() {
       const response = await fetch("http://localhost:8080/get/all", {
         headers: {
           method: "GET",
-          Authorization: "Basic " + authToken,
+          Authorization: `Basic ${authToken}`,
         },
       });
       if (response.status === 200) {
