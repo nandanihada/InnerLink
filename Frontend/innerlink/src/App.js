@@ -6,6 +6,7 @@ import Feed from "./pages/Feed";
 import Newsfeed from "./pages/Newsfeed";
 import Post from "./component/Post";
 import PrivateRoute from "./service/PrivateRoute";
+import Profile from "./pages/Profile";
 
 function App() {
   return (
@@ -35,6 +36,14 @@ function App() {
           element={
             <PrivateRoute>
               <Post />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/profile"
+          element={
+            <PrivateRoute>
+              <Profile />
             </PrivateRoute>
           }
         />
