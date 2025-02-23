@@ -11,6 +11,7 @@ import { motion, useInView, useScroll } from "framer-motion";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { Menu } from "@mui/material";
 import AccountMenu from "../component/AccountMenu";
+import { useNavigate } from "react-router-dom";
 
 function Feed() {
   const ref = React.useRef(null);
@@ -19,6 +20,8 @@ function Feed() {
   const [getPost, setPost] = React.useState([]);
   const [newComment, setNewComment] = React.useState("");
   const [getLike, setLike] = React.useState(0);
+
+  const navigate = useNavigate();
 
   const handleAddComment = async (postId) => {
     if (!newComment.trim()) return; // Prevent empty comments
@@ -215,6 +218,7 @@ function Feed() {
                       transition: "all 1s ease",
                       "&:hover": { backgroundColor: "green", color: "white" },
                     }}
+                    onClick={() => navigate("/post")}
                   />
                   <h2>New Post</h2>
                 </div>
@@ -251,7 +255,7 @@ function Feed() {
                     <h2 className="postCard-title">{post.title}</h2>
                     <div className="postCard-img-container">
                       <img
-                        src="https://cdn.dribbble.com/users/2071065/screenshots/6559618/attachments/1401967/dribble_4-19.png?resize=400x300&vertical=center"
+                        src={post.postImage}
                         alt="Post-Image Comes here!"
                         className="postCard-img"
                       />
