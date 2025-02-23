@@ -52,14 +52,34 @@ public class UserController {
    }
 
 @CrossOrigin
-   @PutMapping("/username")
-    public ResponseEntity<?> updateUser(@RequestBody User user){
-       Authentication authenticationManager= SecurityContextHolder.getContext().getAuthentication();
-       String username=authenticationManager.getName();
-      User user1=userServices.UserById(username);
-       System.out.println(user1);
-       user1.setUsername(user.getUsername());
-       userServices.updateUser(user1);
-       return new ResponseEntity<>("Updated !",HttpStatus.OK);
-   }
+@PutMapping("/update")
+public ResponseEntity<?> updateTheUser(@RequestBody User user) {
+    // Get the currently authenticated user's username
+    Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+    String authUsername = authentication.getName();
+
+    // Fetch the existing user from the database
+    Optional<User> existingUser = Optional.ofNullable(userServices.UserById(authUsername));
+
+    if (existingUser.isPresent()) {
+        User currUser = existingUser.get();
+
+        // Update fields only if they are provided in the request and not empty
+        if (user.getUsername() != null && !user.getUsername().isEmpty()) {
+            currUser.setUsername(user.getUsername());
+        }
+        if (user.getEmail() != null && !user.getEmail().isEmpty()) {
+            currUser.setEmail(user.getEmail());
+        }
+
+        // Save the updated user
+        userServices.updateUser(currUser);
+
+        // Return success response
+        return new ResponseEntity<>("User Updated Successfully", HttpStatus.ACCEPTED);
+    } else {
+        // Return error response if the user is not found
+        return new ResponseEntity<>("User Not Found", HttpStatus.NOT_FOUND);
+    }
+}
 }
