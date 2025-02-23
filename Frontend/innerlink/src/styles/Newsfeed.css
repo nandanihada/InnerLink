@@ -1,32 +1,56 @@
-.headin{
-    display: flex;
-    justify-content: center;
-    position: relative;
-    font-size: 3vh;
-    font-family: "Belanosima", serif;
-    font-weight: 600;
-    font-size: 40px;
-    margin-top: 6vh;
-    margin-right: 15vh;
-    gap: 8vh;
-    color: #333;
+/* Headin Section */
+.headin {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* To center the image and text vertically */
+  font-size: 3vh;
+  font-family: "Belanosima", serif;
+  font-weight: 600;
+  margin-top: 6vh;
+  color: #333;
   transition: transform 0.4s ease, color 0.4s ease, letter-spacing 0.4s ease;
-     
+  gap: 20px; /* Slight increase in gap between the image and text */
 }
+
 .headin:hover {
-    transform: scale(1.1) rotate(2deg);
-    color: #0c8929;
-    letter-spacing: 3px;
-  }
-.img{
-    margin-top: 5vh;
-    width: 20vh;
-    height: 20vh;
+  transform: scale(1.1) rotate(2deg);
+  color: #0c8929;
+  letter-spacing: 3px;
 }
-.together{
-    margin-top: 10vh;
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 80vh;
-    
+
+.img {
+  width: 20vh;
+  height: 20vh;
+  object-fit: cover; /* Ensures the image aspect ratio remains intact */
+}
+
+/* Newsfeed Section */
+.together {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+  gap: 20px; /* Space between columns */
+  row-gap: 60px; /* Vertical space between rows */
+  padding: 20px;
+  width: 100%; /* Ensure it takes up full width */
+  box-sizing: border-box;
+}
+
+/* Individual Cards */
+.card1 {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.card1:hover {
+  transform: scale(1.05); /* Card hover effect */
+}
+
+/* Optional - Adjusting the Card Image Size */
+.card__hero1 img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px; /* Make sure image has rounded corners if you want */
 }

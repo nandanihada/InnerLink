@@ -1,14 +1,15 @@
 import React from 'react'
 import "../styles/Newscard.css"
 
-function Newscard() {
+function Newscard({article}) {
   return (
+
     <>
     
       <article class="card1">
   <section class="card__hero1">
     <header class="card__hero-header1">
-      <span>5 min</span>
+      <span>{article.time}</span>
       <div class="card__icon1">
         <svg
           height="20"
@@ -29,7 +30,8 @@ function Newscard() {
     </header>
 
     <p class="card__job-title1">
-        <img src="https://i.postimg.cc/NG4VkHRH/chuza.webp" alt="" className="chuza" /></p>
+    <img src={article.urlToImage} alt="" className="chuza" />
+      {article.title}</p>
   </section>
 
   <footer class="card__footer1">
@@ -61,8 +63,7 @@ function Newscard() {
       </div>
       <div class="card__job1">
         <p class="card__job-title1">
-          America <br />
-          Got talent
+          {article.title}
         </p>
       </div>
     </div>

@@ -4,6 +4,8 @@ package com.innerlink.socialMedia.controller;
 import com.innerlink.socialMedia.Entity.PostEntries;
 import com.innerlink.socialMedia.Entity.User;
 import com.innerlink.socialMedia.Repo.UserRepo;
+import com.innerlink.socialMedia.Response.Apiresponse;
+import com.innerlink.socialMedia.services.NewsService;
 import com.innerlink.socialMedia.services.PostServices;
 import com.innerlink.socialMedia.services.UserServices;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +21,8 @@ import java.util.UUID;
 @RestController
 @RequestMapping("/get")
 public class PublicController {
+    @Autowired
+    private NewsService newsService;
     @Autowired
     private UserRepo userRepo;
     @Autowired
@@ -61,5 +65,12 @@ public class PublicController {
         }
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
+
+    @GetMapping("/news")
+    public ResponseEntity<?> getNews(){
+        List<Apiresponse.Article> articles=newsService.getNews();
+        return new ResponseEntity<>(articles,HttpStatus.OK);
+    }
+
 
 }
