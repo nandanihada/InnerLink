@@ -1,12 +1,13 @@
 .together {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 2rem;
-  padding: 2rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10rem;
+  padding: 10rem;
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
   box-sizing: border-box;
+  margin-top: 1rem;
 }
 
 /* Card Styles */
@@ -33,7 +34,7 @@
 
 /* Card Hero Section */
 .card__hero1 {
-  background-color: #71c679;
+  background-color: #151715;
   border-radius: 0.5rem 0.5rem 0 0;
   padding: 1.5rem;
   text-align: center;
@@ -48,12 +49,13 @@
 }
 
 .card__hero1 .card__job-title1 {
-  margin: 1rem 0;
+  margin: 1rem 1rem 0.5rem 1rem;
   font-size: 1.25rem;
-  font-weight: 500;
-  color: #141417;
+  font-weight: 100;
+  color: #ebebf5;
   font-family: "Belanosima", serif;
   text-align: center;
+  
 }
 
 /* Card Header */
@@ -64,6 +66,7 @@
   gap: 1rem;
   font-weight: 700;
   margin-bottom: 1rem;
+  
 }
 
 /* Card Footer */
@@ -88,6 +91,7 @@
   display: flex;
   align-items: center;
   gap: 0.75rem;
+  margin-top: 12px;
 }
 
 /* Button Styles */
@@ -95,7 +99,7 @@
   width: 100%;
   padding: 0.75rem 1.5rem;
   border: none;
-  background-color: #71c679;
+  background-color: #090a09;
   color: #fff;
   border-radius: 0.5rem;
   cursor: pointer;
@@ -113,3 +117,4 @@
   display:block;
   border-radius: 5%; /* Circular image */
 }
+

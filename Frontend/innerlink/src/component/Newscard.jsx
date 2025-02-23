@@ -41,7 +41,7 @@ function Newscard({ article, onViewClick }) {
             {article.title}
           </p>
         </section>
-
+          
         <footer className="card__footer1">
           <div className="card__job-summary1">
             <div className="card__job-icon1">
@@ -69,6 +69,7 @@ function Newscard({ article, onViewClick }) {
                 ></path>
               </svg>
             </div>
+            
             <div className="card__job1">
               <p className="card__job-title1">
                 {article.title}
