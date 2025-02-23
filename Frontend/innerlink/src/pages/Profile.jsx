@@ -32,7 +32,7 @@ function Profile() {
     try {
       const authToken=localStorage.getItem("authToken");
       const response = await axios.put(
-        "http://localhost:8080/update/user",
+        "https://innerlink.onrender.com/update/user",
         {
           username: username,
           email: email,
