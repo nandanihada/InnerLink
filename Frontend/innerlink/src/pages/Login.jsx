@@ -16,6 +16,7 @@ function Login() {
       const response = await fetch("https://innerlink.onrender.com/get/verify", {
         method: "GET",
         headers: {
+          cors: "no-cors",
           Authorization: "Basic " + btoa(username + ":" + password),
           "Content-Type": "application/json",
         },
