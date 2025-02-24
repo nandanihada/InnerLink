@@ -20,6 +20,7 @@ function Login() {
           headers: {
             Authorization: "Basic " + btoa(username + ":" + password),
             "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "*",
           },
         }
       );
