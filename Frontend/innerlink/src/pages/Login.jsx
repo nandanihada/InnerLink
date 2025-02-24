@@ -8,25 +8,27 @@ import Footer from "../component/Footer";
 
 function Login() {
   const navigate = useNavigate();
-   const [username, setUsername] = React.useState("");  //username ka state badal raha hai pehle khali fr kuch aa raha 
+  const [username, setUsername] = React.useState(""); //username ka state badal raha hai pehle khali fr kuch aa raha
   const [password, setPassword] = React.useState("");
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("https://innerlink.onrender.com/get/verify", {
-        method: "GET",
-        headers: {
-          cors: "no-cors",
-          Authorization: "Basic " + btoa(username + ":" + password),
-          "Content-Type": "application/json",
-        },
-      });
-      if (response.status === 200) {
+      const response = await fetch(
+        "https://innerlink.onrender.com/get/verify",
+        {
+          method: "GET",
+          headers: {
+            Authorization: "Basic " + btoa(username + ":" + password),
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      if (response.status >= 200) {
         // const data = await response.json();
         const authToken = btoa(username + ":" + password);
         // console.log(data);
         localStorage.setItem("authToken", authToken);
-        localStorage.setItem("username", username); 
+        localStorage.setItem("username", username);
         navigate("/feed");
       } else {
         alert("Please Check the Credentials");
