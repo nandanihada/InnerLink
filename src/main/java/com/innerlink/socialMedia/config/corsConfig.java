@@ -18,7 +18,7 @@ public class corsConfig {
     @Bean
     public CorsFilter corsFilter() {
         CorsConfiguration config = new CorsConfiguration();
-        config.setAllowedOrigins(List.of("http://localhost:3000", "https://inner-link.vercel.app"));
+        config.setAllowedOrigins(List.of("http://localhost:3000", "https://inner-link.vercel.app","https://innerlink.onrender.com"));
         config.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         config.setAllowedHeaders(List.of("*"));
         config.setAllowCredentials(true);
