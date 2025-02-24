@@ -4,7 +4,6 @@ import Navbar from "../component/Navbar";
 import { delay, easeIn, easeInOut, motion, useScroll } from "motion/react";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { Link, useNavigate } from "react-router-dom";
-import Footer from "../component/Footer";
 
 function Login() {
   const navigate = useNavigate();

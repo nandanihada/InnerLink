@@ -1,18 +1,12 @@
 import React, { useEffect, useRef } from "react";
 import "../styles/Feed.css";
-import FaceIcon from "@mui/icons-material/Face";
 import NewspaperIcon from "@mui/icons-material/Newspaper";
 import LogoutIcon from "@mui/icons-material/Logout";
-import DynamicFeedIcon from "@mui/icons-material/DynamicFeed";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
-import CommentIcon from "@mui/icons-material/Comment";
 import AddIcon from "@mui/icons-material/Add";
 import { motion, useInView, useScroll } from "framer-motion";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import { Menu } from "@mui/material";
-import AccountMenu from "../component/AccountMenu";
 import { useNavigate } from "react-router-dom";
-import { SpeedInsights } from "@vercel/speed-insights/react"
 
 function Feed() {
   const ref = React.useRef(null);
@@ -153,7 +147,6 @@ function Feed() {
   };
   return (
     <>
-    <SpeedInsights>
       <motion.div
         className="full-container"
         whileInView={{ backgroundPositionY: ["120%", "100%"], opacity: [0, 1] }}
@@ -354,7 +347,6 @@ function Feed() {
           </motion.div>
         </section>
       </motion.div>
-      </SpeedInsights>
     </>
   );
 }
