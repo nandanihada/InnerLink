@@ -12,6 +12,7 @@ import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { Menu } from "@mui/material";
 import AccountMenu from "../component/AccountMenu";
 import { useNavigate } from "react-router-dom";
+import { SpeedInsights } from "@vercel/speed-insights/react"
 
 function Feed() {
   const ref = React.useRef(null);
@@ -152,6 +153,7 @@ function Feed() {
   };
   return (
     <>
+    <SpeedInsights>
       <motion.div
         className="full-container"
         whileInView={{ backgroundPositionY: ["120%", "100%"], opacity: [0, 1] }}
@@ -352,6 +354,7 @@ function Feed() {
           </motion.div>
         </section>
       </motion.div>
+      </SpeedInsights>
     </>
   );
 }
