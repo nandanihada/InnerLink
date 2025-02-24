@@ -25,7 +25,6 @@ public class PostController {
     private UserServices userServices;
     private Map<Long, PostEntries> map = new HashMap<>();
 
-    @CrossOrigin
     @GetMapping()
     public ResponseEntity<?> getAll() {
         Authentication authenticationManager = SecurityContextHolder.getContext().getAuthentication();
@@ -35,7 +34,6 @@ public class PostController {
         return new ResponseEntity<>(all, HttpStatus.OK);
     }
 
-    @CrossOrigin
     @PostMapping("/create-new")
     public ResponseEntity<?> postContent(@RequestBody PostEntries postEntries) {
         Authentication authenticationManager = SecurityContextHolder.getContext().getAuthentication();
@@ -51,7 +49,6 @@ public class PostController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
-    @CrossOrigin
     @DeleteMapping("/deletePost/{id}")
     public ResponseEntity<?> deleteById(@PathVariable String id) {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
@@ -67,21 +64,18 @@ public class PostController {
         return new ResponseEntity<>("Something Went Wrong!", HttpStatus.BAD_REQUEST);
     }
 
-    @CrossOrigin
     @PostMapping("/likes/{postid}")
     public ResponseEntity<?> addLikes(@PathVariable String postid) {
         postServices.likedBy(postid);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
-    @CrossOrigin
     @PostMapping("/comment/{postid}")
     public ResponseEntity<?> addComment(@RequestBody CommentReq comment, @PathVariable String postid) {
         postServices.addComment(comment.getComment(), postid);
         return new ResponseEntity<>("Comment Added !", HttpStatus.OK);
     }
 
-    @CrossOrigin
     @PostMapping("/set-private/{postid}")
     public ResponseEntity<?> setPrivate(@PathVariable String postid) {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();

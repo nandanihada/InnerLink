@@ -30,7 +30,6 @@ public class PublicController {
     @Autowired
     private PostServices postServices;
 
-    @CrossOrigin
     @PostMapping("/user")
     public ResponseEntity<User> addUser(@RequestBody User user) {//json ko body me bhejna hai
         try {
@@ -43,7 +42,6 @@ public class PublicController {
 
     }
 
-    @CrossOrigin
     @GetMapping("/all")
     public ResponseEntity<?> getAllPost() {
         try {
@@ -54,7 +52,6 @@ public class PublicController {
         }
     }
 
-    @CrossOrigin
     @GetMapping("/verify")
     public ResponseEntity<?> Verification() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
