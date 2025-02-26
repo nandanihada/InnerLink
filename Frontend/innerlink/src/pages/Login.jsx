@@ -13,16 +13,16 @@ function Login() {
     e.preventDefault();
     try {
       const response = await fetch(
-        "https://innerlink.onrender.com/get/verify",
+        // "https://innerlink.onrender.com/get/verify",
+        "http://localhost:8080/get/verify",
         {
-          method: "GET",
           headers: {
+            method: "GET",
             Authorization: "Basic " + btoa(username + ":" + password),
-            "Content-Type": "application/json",
           },
         }
       );
-      if (response.status >= 200) {
+      if (response.status === 200) {
         // const data = await response.json();
         const authToken = btoa(username + ":" + password);
         // console.log(data);

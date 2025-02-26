@@ -58,7 +58,7 @@ public class PublicController {
         String name = authentication.getName();
         User user = userRepo.findByUsername(name);
         if (user != null) {
-            return new ResponseEntity<>("verified", HttpStatus.OK);
+            return new ResponseEntity<>("Verified", HttpStatus.OK);
         }
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
