@@ -30,6 +30,24 @@ public class User {
     private List<String> roles;
     private String userImg;
 
+    public int getPostCount() {
+        return postCount;
+    }
+
+    public void setPostCount(int postCount) {
+        this.postCount = postCount;
+    }
+
+    public String getUserImg() {
+        return userImg;
+    }
+
+    public void setUserImg(String userImg) {
+        this.userImg = userImg;
+    }
+
+    private int postCount;
+
     public String getEmail() {
         return email;
     }

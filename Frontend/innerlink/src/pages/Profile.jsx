@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "../styles/Profile.css";
 import { motion, useInView } from "framer-motion";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
@@ -14,6 +14,7 @@ import {
 import axios from "axios";
 
 function Profile() {
+  const [getData, setData] = React.useState([]);
   const ref = useRef(null);
   const inView = useInView(ref, { once: true });
   const navigate = useNavigate();
@@ -27,11 +28,33 @@ function Profile() {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
+  const handleDetails = async () => {
+    try {
+      const authToken = localStorage.getItem("authToken");
+      const response = await axios.get(
+        // "https://innerlink.onrender.com/get/user",
+        "https://innerlink.onrender.com/user/username",
+        {
+          headers: {
+            method: "GET",
+            Authorization: `Basic ${authToken}`,
+          },
+        }
+      );
+      if (response.status >= 200) {
+        setData(response.data);
+      }
+    } catch (err) {
+      console.log(err.response); // Log the full error response
+      alert("Something went wrong");
+    }
+  };
   const handleUpdate = async (e) => {
     e.preventDefault();
     try {
-      const authToken=localStorage.getItem("authToken");
+      const authToken = localStorage.getItem("authToken");
       const response = await axios.put(
+        // "https://innerlink.onrender.com/update/user",
         "https://innerlink.onrender.com/update/user",
         {
           username: username,
@@ -55,6 +78,9 @@ function Profile() {
       alert("Something went wrong");
     }
   };
+  useEffect(() => {
+    handleDetails();
+  }, []);
   return (
     <>
       <motion.div
@@ -65,7 +91,6 @@ function Profile() {
       >
         <ArrowBackIcon
           sx={{
-            color: "black",
             fontSize: "10vh",
             cursor: "pointer",
             position: "absolute",
@@ -122,7 +147,9 @@ function Profile() {
                 transition={{ duration: 0.5, delay: 1 }}
               >
                 <h3 className="profile-email">Email</h3>
-                <h3 className="profile-name-content">something@gmail.com</h3>
+                <h3 className="profile-name-content">
+                  {getData?.email || "Not Available"}
+                </h3>
               </motion.div>
               <motion.div
                 className="profile-content-container"
@@ -130,7 +157,9 @@ function Profile() {
                 transition={{ duration: 0.5, delay: 1.5 }}
               >
                 <h3 className="profile-post">Post</h3>
-                <h3 className="profile-name-content">0</h3>
+                <h3 className="profile-name-content">
+                  {getData?.postCount || 0}
+                </h3>
               </motion.div>
             </div>
           ) : (
@@ -148,10 +177,7 @@ function Profile() {
                 whileInView={{ x: [100, 0], opacity: [0, 1] }}
                 transition={{ duration: 0.5 }}
               >
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Suscipit, voluptatibus ea? Neque voluptas unde impedit illo
-                aliquam vero nobis quod delectus facere magnam enim ex minima
-                doloribus fuga, reprehenderit labore?
+               {getData?.aboutuser || "No Information"}
               </motion.h2>
             </motion.div>
           )}

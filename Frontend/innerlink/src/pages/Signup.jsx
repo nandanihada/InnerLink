@@ -1,16 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import "../styles/signup.css";
-import {motion} from "motion/react";
+import { motion } from "motion/react";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { Link, useNavigate } from "react-router-dom";
 
 function Signup() {
   const navigate = useNavigate();
+  const [getError, setError] = useState("");
+  const [getSucc,setSucc]=useState("");
   const [formData, setFormData] = React.useState({
     email: "",
     username: "",
     password: "",
+    aboutuser: "",
   });
 
   const handleChange = (e) => {
@@ -27,23 +30,25 @@ function Signup() {
         username: formData.username,
         password: formData.password,
         email: formData.email,
+        aboutuser: formData.aboutuser,
       });
 
       console.log(response);
 
       // Check if status is in the range of 2xx
       if (response.status >= 200 && response.status < 300) {
-        localStorage.setItem("username", formData.username);
-        localStorage.setItem("email", formData.email);
-        alert("User Added");
-        navigate("/login");
+        // alert("User Added");
+        setSucc("User Added Succesfully !");
+        setTimeout(() => {
+          navigate("/login");
+        }, 2000);
       } else {
         console.log("Unexpected response:", response);
-        alert("Something went Wrong");
+        setError("Please Check the Details");
       }
     } catch (err) {
       console.error("Request failed:", err);
-      alert("Something went Wrong");
+      setError("Something Went Wrong !");
     }
   };
 
@@ -60,7 +65,7 @@ function Signup() {
             top: "0px",
             borderRadius: "50%",
             padding: "20px",
-            backgroundColor:"rgba(255, 255, 255, 0.45)",
+            backgroundColor: "rgba(255, 255, 255, 0.45)",
             backdropFilter: "blur(10px)",
             WebkitBackdropFilter: "blur(10px)",
           }}
@@ -123,6 +128,19 @@ function Signup() {
               transition: { delay: 1.5 },
             }}
           />
+          <motion.textarea
+            className="input1"
+            style={{ height: "5vh" }}
+            name="aboutuser"
+            placeholder="Tell us Something About Yourself"
+            type="text"
+            onChange={handleChange}
+            whileInView={{
+              opacity: [0, 1],
+
+              transition: { delay: 1.5 },
+            }}
+          />
 
           {/* <div className="login-with1">
             <div className="button-log1"></div>
@@ -178,6 +196,8 @@ function Signup() {
               Login
             </Link>
           </motion.span>
+          <span className="error-message">{getError}</span>
+          <span className="success-message">{getSucc}</span>
         </motion.form>
       </div>
     </>

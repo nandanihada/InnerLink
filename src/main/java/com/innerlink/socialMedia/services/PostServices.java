@@ -33,7 +33,8 @@ public class PostServices {
           postEntries.setPostedby(username);
           //name se user dhundha
         PostEntries saved = postRepo.save(postEntries);//an entry save kari post me jo aayi thi
-        user.getPostEntries().add(saved);//user ki entry me save krdi
+        user.getPostEntries().add(saved);
+        user.setPostCount(user.getPostEntries().size());//user ki entry me save krdi
         userServices.updateUser(user); //user ko userservice me save kar diya
         return "Post uploaded";
     }

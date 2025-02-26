@@ -67,6 +67,9 @@ public ResponseEntity<?> updateTheUser(@RequestBody User user) {
         if (user.getEmail() != null && !user.getEmail().isEmpty()) {
             currUser.setEmail(user.getEmail());
         }
+        if (user.getAboutuser() != null && !user.getAboutuser().isEmpty()) {
+            currUser.setAboutuser(user.getAboutuser());
+        }
 
         // Save the updated user
         userServices.updateUser(currUser);
