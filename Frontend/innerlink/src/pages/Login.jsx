@@ -13,8 +13,7 @@ function Login() {
     e.preventDefault();
     try {
       const response = await fetch(
-        // "https://innerlink.onrender.com/get/verify",
-        "http://localhost:8080/get/verify",
+        "https://innerlink.onrender.com/get/verify",
         {
           headers: {
             method: "GET",
