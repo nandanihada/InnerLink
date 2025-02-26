@@ -23,7 +23,6 @@ function Feed() {
     try {
       const authToken = localStorage.getItem("authToken");
       const response = await fetch(
-        // `https://innerlink.onrender.com/post/comment/${postId}`,
         `https://innerlink.onrender.com/post/comment/${postId}`,
         {
           method: "POST",

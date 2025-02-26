@@ -8,7 +8,7 @@ import { Link, useNavigate } from "react-router-dom";
 function Signup() {
   const navigate = useNavigate();
   const [getError, setError] = useState("");
-  const [getSucc,setSucc]=useState("");
+  const [getSucc, setSucc] = useState("");
   const [formData, setFormData] = React.useState({
     email: "",
     username: "",
@@ -26,12 +26,15 @@ function Signup() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("https://innerlink.onrender.com/get/user", {
-        username: formData.username,
-        password: formData.password,
-        email: formData.email,
-        aboutuser: formData.aboutuser,
-      });
+      const response = await axios.post(
+        "https://innerlink.onrender.com/get/user",
+        {
+          username: formData.username,
+          password: formData.password,
+          email: formData.email,
+          aboutuser: formData.aboutuser,
+        }
+      );
 
       console.log(response);
 

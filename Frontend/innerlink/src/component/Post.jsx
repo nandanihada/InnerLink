@@ -47,19 +47,22 @@ function Post() {
     }
 
     try {
-      const response = await fetch("https://innerlink.onrender.com/post/create-new", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Basic ${authToken}`,
-        },
-        body: JSON.stringify({
-          title: post.title,
-          postImage: image,
-          caption: post.caption,
-          isPrivate: getPrivate,
-        }),
-      });
+      const response = await fetch(
+        "https://innerlink.onrender.com/post/create-new",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Basic ${authToken}`,
+          },
+          body: JSON.stringify({
+            title: post.title,
+            postImage: image,
+            caption: post.caption,
+            isPrivate: getPrivate,
+          }),
+        }
+      );
 
       // Check if response is empty
       const text = await response.text();
@@ -94,8 +97,6 @@ function Post() {
       };
     }
   };
-
-
 
   return (
     <>

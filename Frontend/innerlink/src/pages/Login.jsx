@@ -18,7 +18,7 @@ function Login() {
           method: "GET",
           headers: {
             Authorization: "Basic " + btoa(username + ":" + password),
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
           },
         }
       );
@@ -101,9 +101,9 @@ function Login() {
             </div>
           </div> */}
           <button className="button-confirm">LETS GO →</button>
-          <br/>
-          <br/>
-          <br/>
+          <br />
+          <br />
+          <br />
           <span className="new-here">
             New Here?{" "}
             <Link
