@@ -9,6 +9,7 @@ import DevCards from "../component/DevCards";
 import Footer from "../component/Footer";
 import { motion, useInView } from "motion/react";
 import { useNavigate } from "react-router-dom";
+import { duration } from "@mui/material";
 function Home() {
   // const { scrollYProgress } = useScroll();
   const ref = React.useRef(null);
@@ -56,20 +57,10 @@ function Home() {
             ref={ref}
             viewport={{ once: true }}
           >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, eum.
+            Connecting Hearts, Beyond Screens.
           </motion.h6>
           <motion.button
             className="btn-get-started"
-            whileTap={{ scale: 0.9 }}
-            whileHover={{
-              scale: 1.1,
-              backgroundColor: "green",
-              transition: { duration: 0.5 },
-              color: "white",
-              border: "2px solid white",
-              cursor: "pointer",
-              transition: { duration: 0.5 },
-            }}
             onClick={() => {
               navigate("/login");
             }}
@@ -118,14 +109,13 @@ function Home() {
             }}
             viewport={{ once: true }}
           >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae
-            voluptatum quod ullam culpa sit fugiat ea facere quibusdam impedit
-            inventore eius doloremque veritatis, fuga quae animi, dolorem
-            corporis dolorum distinctio sequi sed porro aperiam. Asperiores,
-            magnam quo esse hic officia voluptatum corrupti non numquam cumque
-            accusantium quibusdam necessitatibus pariatur fuga, accusamus
-            eligendi nemo repellat deleniti molestias reprehenderit? Eum, et
-            facilis?
+            Inner Link is more than just a social media platform – it’s a space
+            to connect, express, and grow. Whether you're sharing your thoughts,
+            discovering new interests, or building meaningful relationships,
+            Inner Link brings people together in an authentic way. Explore fresh
+            content, engage in real conversations, and stay linked with what
+            truly matters. Try something new, step out of your comfort zone, and
+            make every connection count!
           </motion.div>
           <div className="content-img">
             <motion.img
@@ -182,7 +172,7 @@ function Home() {
                 className="card3"
               />
             }
-            content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, eum."
+            content="Stay Safe, Stay Connected."
           />
           <Cards
             icon={
@@ -195,10 +185,11 @@ function Home() {
                   left: "15vh",
                   top: "20px",
                   padding: "10px",
+                  textAlign: "center",
                 }}
               />
             }
-            content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, eum."
+            content="Your Data, Your Control."
           />
           <Cards
             icon={
@@ -214,7 +205,7 @@ function Home() {
                 }}
               />
             }
-            content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, eum."
+            content="A Space for Positivity & Growth."
           />
         </motion.div>
       </section>
@@ -250,7 +241,7 @@ function Home() {
             <DevCards
               img="https://cdn3.iconfinder.com/data/icons/business-avatar-1/512/11_avatar-512.png"
               devName="Nandani Hada"
-              devDesc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, eum."
+              devDesc="A passionate developer with a vision to make social media safer and more meaningful."
             />
           </motion.div>
           <motion.div
@@ -263,7 +254,7 @@ function Home() {
             <DevCards
               img="https://cdn1.iconfinder.com/data/icons/user-pictures/100/male3-512.png"
               devName="Rishabh Gupta"
-              devDesc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, eum."
+              devDesc="A creative mind who believes in simplicity and user experience. "
             />
           </motion.div>
         </motion.div>

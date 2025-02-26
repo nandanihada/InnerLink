@@ -129,11 +129,20 @@ section {
   background-color: transparent;
   font-family: "Belanosima", serif;
   border-radius: 30px;
+  border-right: 10px solid rgb(130, 211, 114);
+  border-bottom: 10px solid rgb(55, 173, 19);
+  border-top: 1px solid rgb(55, 173, 19);
+  border-left: 1px solid rgb(55, 173, 19);
   position: relative;
   top: -15%;
   text-align: center;
   left: 30%;
   color: black;
+  transition: all 1s ease;
+}
+.btn-get-started:hover{
+  scale: 0.9;
+ cursor: pointer;
 }
 
 .card1 {
