@@ -65,7 +65,7 @@ function Signup() {
             cursor: "pointer",
             position: "relative",
             left: "10px",
-            top: "0px",
+            top: "-100px",
             borderRadius: "50%",
             padding: "20px",
             backgroundColor: "rgba(255, 255, 255, 0.45)",
