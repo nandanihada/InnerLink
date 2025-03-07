@@ -1,3 +1,12 @@
+.outer-container {
+  z-index: -1;
+  border: 1px solid black;
+  height: auto;
+  width: auto;
+  background-image: url("https://i.pinimg.com/736x/d0/db/23/d0db2322eccaa7dded6c047157159ff6.jpg");
+  background-attachment: fixed;
+  background-repeat: repeat-x;
+}
 .headin {
   display: flex;
   justify-content: center;
@@ -6,13 +15,12 @@
   font-family: "Belanosima", serif;
   font-weight: 600;
   margin: 2rem 0;
-  color: #333;
+  color: darkgreen;
   gap: 1.5rem;
   transition: transform 0.4s ease, color 0.4s ease, letter-spacing 0.4s ease;
 }
 
 .headin:hover {
-  transform: scale(1.05) rotate(1deg);
   color: #0c8929;
   letter-spacing: 2px;
 }
@@ -29,11 +37,11 @@
     grid-template-columns: 1fr;
     padding: 1rem;
   }
-  
+
   .card1 {
     min-height: 350px;
   }
-  
+
   .headin {
     flex-direction: column;
     text-align: center;

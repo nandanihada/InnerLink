@@ -23,24 +23,25 @@ function Newsfeed() {
 
   return (
     <>
-      <div className="headin">
-        <img
-          className="img"
-          src="https://i.postimg.cc/52fHzDqJ/earth.gif"
-          alt="Description of image"
-        />
-        <h1> News</h1>
-      </div>
-      <div className="together">
-        {news.map((article, index) => (
-          <Newscard
-            key={index}
-            article={article}
-            onViewClick={() => handleViewClick(article)} // Pass the handleViewClick function
+      <div className="outer-container">
+        <div className="headin">
+          <img
+            className="img"
+            src="https://i.postimg.cc/52fHzDqJ/earth.gif"
+            alt="Description of image"
           />
-        ))}
+          <h1>STAY UPDATED !</h1>
+        </div>
+        <div className="together">
+          {news.map((article, index) => (
+            <Newscard
+              key={index}
+              article={article}
+              onViewClick={() => handleViewClick(article)} // Pass the handleViewClick function
+            />
+          ))}
+        </div>
       </div>
-
       <footer>
         <Footer />
       </footer>
